@@ -1,0 +1,17 @@
+.nav-link {
+  color: gray;
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  color: black;
+  text-decoration: underline;
+}
+
+.nav-link.active {
+  text-decoration: underline;
+  font-weight: bold;
+}
+.nav-container{
+  font-family: Trebuchet MS, sans-serif;
+}
