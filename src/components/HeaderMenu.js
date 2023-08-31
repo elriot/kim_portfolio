@@ -56,7 +56,7 @@ export default function HeaderMenu() {
         <div>
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
                 <div className="container nav-container">
-                    <a className="navbar-brand" href="/">
+                    <a className="navbar-brand" href="./">
                         Soopin Kim {navTitle}
                     </a>
                     <button
