@@ -1,0 +1,98 @@
+.about-me-container {
+    /* font-family: Verdana, sans-serif; */
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif, Cochin, Georgia, Times, 'Times New Roman', serif;
+    letter-spacing: 0.1em;
+    /* font-family: Trebuchet MS, sans-serif;; */
+}
+.profile-image-container{
+    /* width: 60%;
+    height: 60%;  */
+    /* width: 100%;
+    height: 100%; */
+ 
+    overflow: hidden;
+    /* display: flex; */
+    /* align-items: center; */
+    /* justify-content: center; */
+    /* position: relative; */
+    /* width: 100%;
+    height: 100%; */
+    margin-top: 5%;
+    margin-bottom: 5%;    
+    /* background-color: red; */    
+}
+
+.profile-image{
+    width: 80%;
+    height: 80%;
+    border-radius: 70%;
+    filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.2)); 
+    object-fit: cover;
+    margin-bottom: 10px;
+    
+}
+
+.name-tag{
+    font-weight: bolder;
+    color: rgb(106, 99, 99);
+    margin: 0;
+    font-size: clamp(1.8em,calc(1em + 2.0vw),3.6em);
+}
+.job-tag{
+    color: rgb(149, 148, 148);
+    font-size: clamp(1.0em,calc(0.5em + 2.0vw),1.5em);
+    
+}
+
+button svg{
+    /* color: #0a66c2; */
+    color: white;
+    font-size: clamp(0.9em,calc(0.3em + 2.0vw),1.3em);
+    /* font-size: x-large; */
+    margin-right: 5px;    
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+}
+.button-container{
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    position: relative;;
+}
+.about-button{    
+    margin-top: 10px;
+    margin-bottom: 5px;
+    border-radius: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    
+    filter: drop-shadow(3px 3px 3px rgba(32, 12, 87, 0.3)); 
+    color:white;
+    font-weight: bolder;
+    border:none;
+    font-size: clamp(0.9em,calc(0.3em + 2.0vw),1.3em);
+    font-size: 1.4em;
+    transition: all 0.2s ease-in-out;
+}
+.about-button.linked-in{
+    background-color: rgb(97, 202, 221);
+}
+.about-button.linked-in:hover{
+    background-color: rgb(38, 168, 192);   
+}
+.about-button.resume{
+    background-color: rgb(155, 173, 242);
+}
+.about-button.resume:hover{
+    background-color: rgb(108, 134, 236);    
+}
+
+.profile-details{    
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+}

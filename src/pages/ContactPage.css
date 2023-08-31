@@ -1,0 +1,57 @@
+.contact-page-container{
+    margin-top: 40px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-bottom: 50px;
+}
+.contact-info{
+    margin-top: 30px;
+    font-size: larger;
+    display: flex;
+    flex-direction: column;    
+}
+.input-form{
+    /* margin: 0px; */
+    margin-top: 30px;
+    margin-left: 4px;
+    margin-right: 4px;
+}
+.input-content{
+    text-align: start;
+    resize: none;
+}
+.label{
+    margin-top: 20px;
+}
+.form-label{
+    font-weight: bold;
+    font-size: larger;
+    text-align: start;
+    padding-left: 0px;
+    margin-top: 20px;
+}
+.email-button{    
+    height: 40px;
+    /* text-decoration: none; */
+    margin-bottom: 5px;  
+    font-weight: 400;
+    border-radius: 40px;
+    border-color: rgb(95, 141, 130);
+    background-color: rgb(95, 141, 130);
+    color :white;
+    /* border-inline-color: none; */
+    border-style: solid;
+    padding-left: 20px;
+    padding-right:20px;
+    transition: all 0.2s ease-in-out;
+    filter: drop-shadow(3px 3px 3px rgba(32, 12, 87, 0.3)); 
+    font-family: Trebuchet MS, sans-serif;    
+}
+.email-button:hover{
+    border-color:rgb(39, 108, 91);
+    background-color:rgb(39, 108, 91);
+}
+.form-control:focus {
+    outline: none;
+    border: 2px solid rgb(50, 74, 67);
+    box-shadow: 0 0 6px rgb(176, 237, 176);
+}
