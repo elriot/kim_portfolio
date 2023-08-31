@@ -7,4 +7,4 @@ It's built using React and the layout is designed with Bootstrap 5.
 ### Links
 
 - [GitHub Repository](https://github.com/elriot/portfolio)
-- [Live Webpage](https://elriot.github.io/portfolio)
+- [Live Webpage](https://elriot.github.io/kim_portfolio)
