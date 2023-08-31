@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/kim_portfolio/static/css/main.a2a16c00.css",
+    "main.js": "/kim_portfolio/static/js/main.d78861c8.js",
+    "static/js/787.92376d47.chunk.js": "/kim_portfolio/static/js/787.92376d47.chunk.js",
+    "static/media/resume.pdf": "/kim_portfolio/static/media/resume.e4857459397fceed7462.pdf",
+    "static/media/profile.jpg": "/kim_portfolio/static/media/profile.70b82abf53e0a537295f.jpg",
+    "index.html": "/kim_portfolio/index.html",
+    "main.a2a16c00.css.map": "/kim_portfolio/static/css/main.a2a16c00.css.map",
+    "main.d78861c8.js.map": "/kim_portfolio/static/js/main.d78861c8.js.map",
+    "787.92376d47.chunk.js.map": "/kim_portfolio/static/js/787.92376d47.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a2a16c00.css",
+    "static/js/main.d78861c8.js"
+  ]
+}
