@@ -3,6 +3,7 @@ import weather from "../images/weather.png";
 import panda from "../images/panda.png";
 import condo from "../images/condo.png";
 import rpg from "../images/rpg.png";
+import wordle from "../images/wordle.png";
 import {AiOutlineLink, AiOutlineGithub} from "react-icons/ai"
 export const Portfolio = () => {
     return (
@@ -100,6 +101,7 @@ export const Portfolio = () => {
                         </button>
                     </div>
                 </div>
+
                 <div className="card">
                     <div className="card-img">
                         <a href={rpg} target="_blank" rel="noopener noreferrer">
@@ -127,6 +129,38 @@ export const Portfolio = () => {
                             <span>Github Repository</span>
                         </button>
                         <button className="card-button button-web" onClick={() => { window.open("https://elriot.github.io/rpg_portfolio/", "_blank") }} >
+                            <AiOutlineLink/>
+                            <span>Live Web</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div className="card">
+                    <div className="card-img">
+                        <a href={wordle} target="_blank" rel="noopener noreferrer">
+                            <img src={wordle} className="card-img-top" alt="wordle-app" />
+                        </a>
+                    </div>
+                    <div className="card-body">
+                        <h5 className="card-title">Wordle Game</h5>
+                        <div className="card-description">
+                            <p>Wordle is a game where you guess the word of the day, which is comprised of 5 letters.</p>
+                            <p>It works seamlessly on both PC browsers and mobile devices.</p>
+                            {/* <div className="card-bold">
+                                <p> - Notice -</p>
+                                <p> This app is optimized for PC browsers only.</p>
+                            </div> */}
+                        </div>
+                        <div className="card-teck-inidividual">
+                            <span>React</span>
+                            <span>Bootstrap5</span>                            
+                            <span>react-icons</span>
+                        </div>
+                        <button className="card-button" onClick={() => { window.open("https://github.com/elriot/wordle", "_blank") }}>
+                            <AiOutlineGithub/>
+                            <span>Github Repository</span>
+                        </button>
+                        <button className="card-button button-web" onClick={() => { window.open("https://elriot.github.io/wordle/", "_blank") }} >
                             <AiOutlineLink/>
                             <span>Live Web</span>
                         </button>
