@@ -6,5 +6,5 @@ It's built using React and the layout is designed with Bootstrap 5.
 
 ### Links
 
-- GitHub Repository : [https://github.com/elriot/kim_portfolio]https://github.com/elriot/kim_portfolio
-- Live Webpage : [https://elriot.github.io/kim_portfolio]https://elriot.github.io/kim_portfolio
+- GitHub Repository : https://github.com/elriot/kim_portfolio
+- Live Webpage : https://elriot.github.io/kim_portfolio
