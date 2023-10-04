@@ -1,22 +1,23 @@
 {
   "files": {
     "main.css": "/kim_portfolio/static/css/main.e6c47aee.css",
-    "main.js": "/kim_portfolio/static/js/main.c004cd9f.js",
+    "main.js": "/kim_portfolio/static/js/main.c9440ee4.js",
     "static/js/787.92376d47.chunk.js": "/kim_portfolio/static/js/787.92376d47.chunk.js",
     "static/media/panda.png": "/kim_portfolio/static/media/panda.437db8d893d6a31d5cdf.png",
     "static/media/rpg.png": "/kim_portfolio/static/media/rpg.3b7d1f01eb2cb5370d97.png",
     "static/media/weather.png": "/kim_portfolio/static/media/weather.1671cdd3be1d600d0cfc.png",
+    "static/media/dictionary.png": "/kim_portfolio/static/media/dictionary.867f8fd612a7e6e9d9cd.png",
     "static/media/resume.pdf": "/kim_portfolio/static/media/resume.e4857459397fceed7462.pdf",
     "static/media/wordle.png": "/kim_portfolio/static/media/wordle.ace149eeadd213d8a735.png",
     "static/media/profile.jpg": "/kim_portfolio/static/media/profile.70b82abf53e0a537295f.jpg",
     "static/media/condo.png": "/kim_portfolio/static/media/condo.58eb0c77cf96ba69e4b7.png",
     "index.html": "/kim_portfolio/index.html",
     "main.e6c47aee.css.map": "/kim_portfolio/static/css/main.e6c47aee.css.map",
-    "main.c004cd9f.js.map": "/kim_portfolio/static/js/main.c004cd9f.js.map",
+    "main.c9440ee4.js.map": "/kim_portfolio/static/js/main.c9440ee4.js.map",
     "787.92376d47.chunk.js.map": "/kim_portfolio/static/js/787.92376d47.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c47aee.css",
-    "static/js/main.c004cd9f.js"
+    "static/js/main.c9440ee4.js"
   ]
 }
