@@ -4,6 +4,7 @@ import panda from "../images/panda.png";
 import condo from "../images/condo.png";
 import rpg from "../images/rpg.png";
 import wordle from "../images/wordle.png";
+import dictionary from "../images/dictionary.png";
 import {AiOutlineLink, AiOutlineGithub} from "react-icons/ai"
 export const Portfolio = () => {
     return (
@@ -25,7 +26,7 @@ export const Portfolio = () => {
                         {/* <p className="card-teck-stack">Tech Stack</p> */}
                         <div className="card-teck-inidividual">
                             <span>React</span>
-                            <span>Rudex ToolKit</span>
+                            <span>Redux ToolKit</span>
                             <span>Axios</span>
                             <span>Tailwind CSS</span>
                             <span>JSON Server</span>
@@ -164,6 +165,38 @@ export const Portfolio = () => {
                             <AiOutlineLink/>
                             <span>Live Web</span>
                         </button>
+                    </div>
+                </div>
+
+                <div className="card">
+                    <div className="card-img">
+                        <a href={dictionary} target="_blank" rel="noopener noreferrer">
+                            <img src={dictionary} className="card-img-top" alt="wordle-app" />
+                        </a>
+                    </div>
+                    <div className="card-body">
+                        <h5 className="card-title">Panda Dictionary</h5>
+                        <div className="card-description">
+                            <p>Panda Dictionary is web application tailored for managing panda profiles</p>
+                            <p>Users can effortlessly view, add, edit, and delete profiles.</p>
+                        </div>
+                        <div className="card-teck-inidividual">
+                            <span>React</span>
+                            <span>Nods.js</span>                            
+                            <span>MySQL</span>
+                            <span>Redux ToolKit</span>
+                            <span>Sequelize</span>
+                            <span>Axios</span>   
+                            <span>Express</span>   
+                        </div>
+                        <button className="card-button" onClick={() => { window.open("https://github.com/elriot/panda_dictionary", "_blank") }}>
+                            <AiOutlineGithub/>
+                            <span>Github Repository</span>
+                        </button>
+                        {/* <button className="card-button button-web" onClick={() => { window.open("https://elriot.github.io/wordle/", "_blank") }} >
+                            <AiOutlineLink/>
+                            <span>Live Web</span>
+                        </button> */}
                     </div>
                 </div>
             </div>
