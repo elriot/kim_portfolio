@@ -6,13 +6,13 @@ import resume from "../files/resume.pdf";
 
 export const AboutPage = () => {
     return (
-        <div className="page-container about-me-container container">
+        <div className="page-container about-me-container page-container-height">
             <div className="profile-image-container item">
                 <img className="profile-image" src={profile} alt="here"></img>
             </div>
             <div className="item">
                 <p className="name-tag">SOOPIN KIM</p>
-                <p className="job-tag">SOFTWARE DEVELOPER</p>
+                <p className="job-tag">Software Developer</p>
                 <div className="button-container">
                     <button
                         className="about-button linked-in"

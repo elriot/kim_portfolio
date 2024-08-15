@@ -26,7 +26,7 @@ export const MainPage = () => {
     }, []); 
 
     return (
-        <div className="main-container">
+        <div className="main-container page-container-height">
             <span className="comment-text comment">// Welcoming message for everyone</span>
             <h1 className="main-text">
                 <span className="function-name">print</span>

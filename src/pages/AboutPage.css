@@ -1,28 +1,22 @@
 
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+
 
 .about-me-container {
-    font-family: JetBrains Mono, monospace; 
-    height: 100vh;
-    width: 100vw;
+    font-family: "Josefin Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: bold;
+    font-style: normal;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-.container {
-    display: flex;
-    flex-direction: column;
-}
-
-.item {
-    background-color: #f0f0f0;
-    padding: 20px;
-    border: 1px solid #ccc;
+    padding: 0;
 }
 
 @media (min-width: 768px) {
-    .container {
+    .about-me-container {
         flex-direction: row;
         flex-wrap: wrap;
         gap: 20px;
@@ -32,14 +26,30 @@
     }
 }
 
+.item {
+    /* border: 1px solid gray; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
 
-.profile-image{
-    width: 90%;
-    height: 90%;
+.profile-image-container {
+    width: min-content(width,height);
+    height: min-content(width,height);
+    overflow: hidden;
+    margin-top: 5%;
+    margin-bottom: 5%;    
+}
+
+.profile-image {
+    width: 80%;
+    height: 80%;
     border-radius: 70%;
     filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.2)); 
-    object-fit: cover;
-    margin-bottom: 10px
+    object-fit: cover; 
 }
 
 .name-tag{
@@ -47,11 +57,13 @@
     color: rgb(106, 99, 99);
     margin: 0;
     font-size: clamp(1.8em,calc(1em + 2.0vw),3.6em);
+    font-family: "Exo 2", sans-serif;
     
 }
 .job-tag{
     color: rgb(149, 148, 148);
     font-size: clamp(1.0em,calc(0.5em + 2.0vw),1.5em);
+    font-family: "Exo 2", sans-serif;
     
 }
 
@@ -64,6 +76,7 @@ button svg{
     align-items: center;
     justify-items: center;
     text-align: center;
+      font-family: "Exo 2", sans-serif;
 }
 .button-container{
     margin-top: 15px;
@@ -82,11 +95,12 @@ button svg{
     
     filter: drop-shadow(3px 3px 3px rgba(32, 12, 87, 0.3)); 
     color:white;
-    font-weight: bolder;
+    /* font-weight: bolder; */
     border:none;
     font-size: clamp(0.9em,calc(0.3em + 2.0vw),1.3em);
     font-size: 1.4em;
     transition: all 0.2s ease-in-out;
+    font-family: "Exo 2", sans-serif;
 }
 .about-button.linked-in{
     background-color: rgb(97, 202, 221);

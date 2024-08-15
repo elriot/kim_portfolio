@@ -1,6 +1,8 @@
 .page-container {
   /* background-color: gray; */
+  height: 100;
   width: 90%;
+  max-width: 1140px;
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -9,4 +11,8 @@
   flex-direction: column;
   margin: auto;
   margin-top: 20px;
+}
+
+.page-container-height {
+  height: calc(100vh - 50px);
 }
