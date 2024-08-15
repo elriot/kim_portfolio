@@ -1,12 +1,12 @@
 .page-container{
     /* background-color: gray; */
-    width: 90%;
+    /* width: 90%; */
     overflow: hidden;
-    display: flex;
+    /* display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
-    flex-direction: column;
+    flex-direction: column; */
     margin: auto;
     margin-top: 20px;
   }

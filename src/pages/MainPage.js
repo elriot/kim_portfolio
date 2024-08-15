@@ -1,6 +1,6 @@
 // import "./MainPage.css";
 import React, { useState, useEffect } from 'react';
-import './MainPage2.css'; // 수정된 스타일이 포함된 CSS 파일을 가져옵니다.
+import './MainPage2.css'; 
 
 export const MainPage = () => {
     const [text, setText] = useState("Welcome!");
