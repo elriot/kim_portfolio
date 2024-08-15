@@ -20,18 +20,19 @@ export const MainPage = () => {
                 setFade(false); 
             }, 1000); 
 
-        }, 2000); 
+        }, 3000); 
 
         return () => clearInterval(interval);
     }, []); 
 
     return (
         <div className="main-container">
+            <span className="comment-text comment">// Welcoming message for everyone</span>
             <h1 className="main-text">
-                <span className="func1">print</span>
-                <span className="func3">(</span>
-                <span className={`func2 ${fade ? 'fade-out' : ''}`}>"{text}"</span>
-                <span className="func3">)</span>
+                <span className="function-name">print</span>
+                <span className="function-parentheses">(</span>
+                <span className={`animated-text func2 ${fade ? 'fade-out' : ''}`}>"{text}"</span>
+                <span className="function-parentheses">)</span>
             </h1>
         </div>
     );
