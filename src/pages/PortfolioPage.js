@@ -5,11 +5,83 @@ import condo from "../images/condo.png";
 import rpg from "../images/rpg.png";
 import wordle from "../images/wordle.png";
 import dictionary from "../images/dictionary.png";
+import menu from "../images/menu.gif"
 import {AiOutlineLink, AiOutlineGithub} from "react-icons/ai"
+import { IoLogoYoutube } from "react-icons/io";
 export const Portfolio = () => {
     return (
         <div className="page-container mt-5">
             <div className="card-container">
+
+            <div className="card">
+                    <div className="card-img">
+                        <a href={menu} target="_blank" rel="noopener noreferrer">
+                            <img src={menu} className="card-img-top" alt="condo-app" />
+                        </a>
+                    </div>
+                    <div className="card-body">
+                        <h5 className="card-title">To Do List</h5>
+                        <div className="card-description">
+                            <p>Order Food, Add Tipping</p>
+                            <p>ios app for Ordering foods and Adding Tip.</p>
+                            <p>Using NavigationStack, the app allows users to navigate back to the previous view and pass data to the connected view.</p>
+                        </div>
+            
+                        <div className="card-teck-inidividual">
+                            <span>Xcode</span>
+                            <span>SwiftUI</span>
+                            <span>Firebase</span>
+                            <span>Firebase Authentication</span>
+                            <span>CRUD</span>
+                            <span>MVVM</span>
+                            <span>SF Symbols</span>
+                            <span>Customized List View</span>
+                            <span>Navigation Stack</span>
+                        </div>
+                        <button className="card-button" onClick={() => { window.open("https://github.com/elriot/ToDoList", "_blank") }}>
+                            <AiOutlineGithub/>
+                            <span>Github Repository</span>
+                        </button>
+                        <button className="card-button button-web" onClick={() => { window.open("https://youtu.be/SlbUBHVAQPY", "_blank") }}>
+                            <IoLogoYoutube/>
+                            <span>Demo</span>
+                        </button>
+                    </div>
+                </div>
+
+            <div className="card">
+                    <div className="card-img">
+                        <a href={menu} target="_blank" rel="noopener noreferrer">
+                            <img src={menu} className="card-img-top" alt="condo-app" />
+                        </a>
+                    </div>
+                    <div className="card-body">
+                        <h5 className="card-title">Tipping App</h5>
+                        <div className="card-description">
+                            <p>Order Food, Add Tipping</p>
+                            <p>ios app for Ordering foods and Adding Tip.</p>
+                            <p>Using NavigationStack, the app allows users to navigate back to the previous view and pass data to the connected view.</p>
+                        </div>
+            
+                        <div className="card-teck-inidividual">
+                            <span>Xcode</span>
+                            <span>SwiftUI</span>
+                            <span>MVVM</span>
+                            <span>SF Symbols</span>
+                            <span>Customized List View</span>
+                            <span>Navigation Stack</span>
+                        </div>
+                        <button className="card-button" onClick={() => { window.open("https://github.com/elriot/TippingSwiftUI", "_blank") }}>
+                            <AiOutlineGithub/>
+                            <span>Github Repository</span>
+                        </button>
+                        <button className="card-button button-web" onClick={() => { window.open("https://youtu.be/SlbUBHVAQPY", "_blank") }}>
+                            <IoLogoYoutube/>
+                            <span>Demo</span>
+                        </button>
+                    </div>
+                </div>
+
                 <div className="card">
                     <div className="card-img">
                         <a href={condo} target="_blank" rel="noopener noreferrer">
@@ -40,6 +112,7 @@ export const Portfolio = () => {
                         </button>
                     </div>
                 </div>
+
                 <div className="card">
                     <div className="card-img">
                         <a href={weather} target="_blank" rel="noopener noreferrer">
