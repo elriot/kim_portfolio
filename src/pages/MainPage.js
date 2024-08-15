@@ -1,24 +1,38 @@
-import "./MainPage.css";
+// import "./MainPage.css";
+import React, { useState, useEffect } from 'react';
+import './MainPage2.css'; // 수정된 스타일이 포함된 CSS 파일을 가져옵니다.
 
 export const MainPage = () => {
+    const [text, setText] = useState("Welcome!");
+    const [fade, setFade] = useState(false);
+    const texts = ["Hello!", "Enjoy", "My Homepage"];
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setFade(true); 
+
+            setTimeout(() => {
+                setText((prevText) => {
+                    const currentIndex = texts.indexOf(prevText);
+                    const nextIndex = (currentIndex + 1) % texts.length;
+                    return texts[nextIndex];
+                });
+                setFade(false); 
+            }, 1000); 
+
+        }, 2000); 
+
+        return () => clearInterval(interval);
+    }, []); 
+
     return (
         <div className="main-container">
-            <h1 className="title">Hello World!</h1>
-            <div className="area" >
-                <ul className="circles">
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                </ul>
-            </div >
+            <h1 className="main-text">
+                <span className="func1">print</span>
+                <span className="func3">(</span>
+                <span className={`func2 ${fade ? 'fade-out' : ''}`}>"{text}"</span>
+                <span className="func3">)</span>
+            </h1>
         </div>
-
     );
 }
