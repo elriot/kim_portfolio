@@ -6,6 +6,7 @@ import rpg from "../images/rpg.png";
 import wordle from "../images/wordle.png";
 import dictionary from "../images/dictionary.png";
 import menu from "../images/menu.gif"
+import todo from "../images/todo.gif"
 import {AiOutlineLink, AiOutlineGithub} from "react-icons/ai"
 import { IoLogoYoutube } from "react-icons/io";
 export const Portfolio = () => {
@@ -15,8 +16,8 @@ export const Portfolio = () => {
 
             <div className="card">
                     <div className="card-img">
-                        <a href={menu} target="_blank" rel="noopener noreferrer">
-                            <img src={menu} className="card-img-top" alt="condo-app" />
+                        <a href={todo} target="_blank" rel="noopener noreferrer">
+                            <img src={todo} className="card-img-top" alt="condo-app" />
                         </a>
                     </div>
                     <div className="card-body">

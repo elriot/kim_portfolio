@@ -20,7 +20,7 @@ export const MainPage = () => {
                 setFade(false); 
             }, 1000); 
 
-        }, 3000); 
+        }, 2500); 
 
         return () => clearInterval(interval);
     }, []); 
