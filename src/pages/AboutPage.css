@@ -14,16 +14,26 @@
     align-items: center;
     padding: 0;
     max-width: 800px;
+    /* height: fit-content !important; for mobile biew */
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1150px) {
     .about-me-container {
         flex-direction: row;
         flex-wrap: wrap;
         gap: 20px;
+        /* height: fit-content !important; */
     }
     .item {
         flex: 1 1 calc(50% - 20px);
+    }
+}
+@media only screen and (max-width: 768px) {
+    .about-me-container {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 20px;
+        height: fit-content !important;
     }
 }
 
@@ -34,7 +44,7 @@
     justify-content: center;
     align-items: center;
     margin: 0;
-    padding: 0;
+    padding: 5%;
 }
 
 .profile-image-container {
@@ -42,7 +52,8 @@
     height: min-content(width,height);
     overflow: hidden;
     margin-top: 5%;
-    margin-bottom: 5%;    
+    margin-bottom: 5%;  
+    padding: 20px  
 }
 
 .profile-image {

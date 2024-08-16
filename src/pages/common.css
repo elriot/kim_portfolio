@@ -11,6 +11,8 @@
   flex-direction: column;
   margin: auto;
   margin-top: 20px;
+  align-content: center;
+  /* justify-content: center; */
 }
 
 .page-container-height {
