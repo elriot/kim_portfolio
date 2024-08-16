@@ -23,9 +23,8 @@ export const Portfolio = () => {
                     <div className="card-body">
                         <h5 className="card-title">To Do List</h5>
                         <div className="card-description">
-                            <p>Order Food, Add Tipping</p>
-                            <p>ios app for Ordering foods and Adding Tip.</p>
-                            <p>Using NavigationStack, the app allows users to navigate back to the previous view and pass data to the connected view.</p>
+                            <p>Simple To Do List App with full CRUD functionality implemented using Firebase. </p>
+                            <p>It offers user registration and login features, and provides three page views: To Do, In Progress, and Done.</p>
                         </div>
             
                         <div className="card-teck-inidividual">
@@ -38,6 +37,7 @@ export const Portfolio = () => {
                             <span>SF Symbols</span>
                             <span>Customized List View</span>
                             <span>Navigation Stack</span>
+                            <span>Page View</span>
                         </div>
                         <button className="card-button" onClick={() => { window.open("https://github.com/elriot/ToDoList", "_blank") }}>
                             <AiOutlineGithub/>
