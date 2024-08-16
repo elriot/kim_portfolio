@@ -1,12 +1,20 @@
-.page-container{
-    /* background-color: gray; */
-    width: 90%;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    flex-direction: column;
-    margin: auto;
-    margin-top: 20px;
-  }
+.page-container {
+  /* background-color: gray; */
+  height: 100;
+  width: 90%;
+  max-width: 1140px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  flex-direction: column;
+  margin: auto;
+  margin-top: 20px;
+  align-content: center;
+  /* justify-content: center; */
+}
+
+.page-container-height {
+  height: calc(100vh - 50px);
+}
