@@ -43,7 +43,7 @@ export const Portfolio = () => {
                             <AiOutlineGithub/>
                             <span>Github Repository</span>
                         </button>
-                        <button className="card-button button-web" onClick={() => { window.open("https://youtu.be/SlbUBHVAQPY", "_blank") }}>
+                        <button className="card-button button-web" onClick={() => { window.open("https://youtu.be/KCCrN0AIVbs", "_blank") }}>
                             <IoLogoYoutube/>
                             <span>Demo</span>
                         </button>
@@ -76,7 +76,7 @@ export const Portfolio = () => {
                             <AiOutlineGithub/>
                             <span>Github Repository</span>
                         </button>
-                        <button className="card-button button-web" onClick={() => { window.open("https://youtu.be/SlbUBHVAQPY", "_blank") }}>
+                        <button className="card-button button-web" onClick={() => { window.open("https://youtu.be/B-CeOr7n2yM", "_blank") }}>
                             <IoLogoYoutube/>
                             <span>Demo</span>
                         </button>
