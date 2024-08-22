@@ -7,6 +7,7 @@ import wordle from "../images/wordle.png";
 import dictionary from "../images/dictionary.png";
 import menu from "../images/menu.gif"
 import todo from "../images/todo.gif"
+import weatherApp from "../images/weatherApp.png"
 import {AiOutlineLink, AiOutlineGithub} from "react-icons/ai"
 import { IoLogoYoutube } from "react-icons/io";
 export const Portfolio = () => {
@@ -15,6 +16,37 @@ export const Portfolio = () => {
             <div className="card-container">
 
             <div className="card">
+                    <div className="card-img">
+                        <a href={weatherApp} target="_blank" rel="noopener noreferrer">
+                            <img src={weatherApp} className="card-img-top" alt="condo-app" />
+                        </a>
+                    </div>
+                    <div className="card-body">
+                        <h5 className="card-title">Weather App</h5>
+                        <div className="card-description">
+                            <p>Simple iOS Weather App feching data from a Weather API</p>
+                            <p>Fetches current wewather, weekly forecast, and location data.</p>
+                        </div>
+
+                        <div className="card-teck-inidividual">
+                            <span>Xcode</span>
+                            <span>SwiftUI</span>
+                            <span>OpenWeather API</span>
+                            <span>Tab View</span>
+                            <span>Custom Views</span>
+                        </div>
+                        <button className="card-button" onClick={() => { window.open("https://github.com/elriot/WeatherAppSwift", "_blank") }}>
+                            <AiOutlineGithub />
+                            <span>Github Repository</span>
+                        </button>
+                        <button className="card-button button-web" onClick={() => { window.open("https://youtu.be/Q4u1QcBBjGw", "_blank") }}>
+                            <IoLogoYoutube />
+                            <span>Demo</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div className="card">
                     <div className="card-img">
                         <a href={todo} target="_blank" rel="noopener noreferrer">
                             <img src={todo} className="card-img-top" alt="condo-app" />
@@ -26,7 +58,7 @@ export const Portfolio = () => {
                             <p>Simple To Do List App with full CRUD functionality implemented using Firebase. </p>
                             <p>It offers user registration and login features, and provides three page views: To Do, In Progress, and Done.</p>
                         </div>
-            
+
                         <div className="card-teck-inidividual">
                             <span>Xcode</span>
                             <span>SwiftUI</span>
@@ -40,11 +72,11 @@ export const Portfolio = () => {
                             <span>Page View</span>
                         </div>
                         <button className="card-button" onClick={() => { window.open("https://github.com/elriot/ToDoList", "_blank") }}>
-                            <AiOutlineGithub/>
+                            <AiOutlineGithub />
                             <span>Github Repository</span>
                         </button>
                         <button className="card-button button-web" onClick={() => { window.open("https://youtu.be/KCCrN0AIVbs", "_blank") }}>
-                            <IoLogoYoutube/>
+                            <IoLogoYoutube />
                             <span>Demo</span>
                         </button>
                     </div>
