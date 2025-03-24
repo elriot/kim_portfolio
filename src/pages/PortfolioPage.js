@@ -45,7 +45,6 @@ export const Portfolio = () => {
               <span>Physics-based merging</span>
               <span>Responsive UI</span>
               <span>World-space UI modal</span>
-              <span>Customized List View</span>
               <span>Sound & volume control</span>
               <span>Player Prefabs</span>
             </div>
