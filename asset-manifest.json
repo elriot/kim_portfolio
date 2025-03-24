@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/kim_portfolio/static/css/main.c64bd9b1.css",
+    "main.js": "/kim_portfolio/static/js/main.b2a14512.js",
+    "static/js/787.01724b9e.chunk.js": "/kim_portfolio/static/js/787.01724b9e.chunk.js",
+    "static/media/lululemon.gif": "/kim_portfolio/static/media/lululemon.d466482ec2f9178071b6.gif",
+    "static/media/ball.png": "/kim_portfolio/static/media/ball.0f2ff9fed385770b643c.png",
+    "static/media/panda.png": "/kim_portfolio/static/media/panda.437db8d893d6a31d5cdf.png",
+    "static/media/menu.gif": "/kim_portfolio/static/media/menu.fa110df2a9874842bc7a.gif",
+    "static/media/rpg.png": "/kim_portfolio/static/media/rpg.3b7d1f01eb2cb5370d97.png",
+    "static/media/todo.gif": "/kim_portfolio/static/media/todo.09b57d367e78b7eedabd.gif",
+    "static/media/weather.png": "/kim_portfolio/static/media/weather.1671cdd3be1d600d0cfc.png",
+    "static/media/weatherApp.png": "/kim_portfolio/static/media/weatherApp.d40670706b5f5273b4d6.png",
+    "static/media/dictionary.png": "/kim_portfolio/static/media/dictionary.867f8fd612a7e6e9d9cd.png",
+    "static/media/resume.pdf": "/kim_portfolio/static/media/resume.435274504d8f48a8feb3.pdf",
+    "static/media/wordle.png": "/kim_portfolio/static/media/wordle.ace149eeadd213d8a735.png",
+    "static/media/profile.jpg": "/kim_portfolio/static/media/profile.70b82abf53e0a537295f.jpg",
+    "static/media/condo.png": "/kim_portfolio/static/media/condo.58eb0c77cf96ba69e4b7.png",
+    "index.html": "/kim_portfolio/index.html",
+    "main.c64bd9b1.css.map": "/kim_portfolio/static/css/main.c64bd9b1.css.map",
+    "main.b2a14512.js.map": "/kim_portfolio/static/js/main.b2a14512.js.map",
+    "787.01724b9e.chunk.js.map": "/kim_portfolio/static/js/787.01724b9e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c64bd9b1.css",
+    "static/js/main.b2a14512.js"
+  ]
+}
