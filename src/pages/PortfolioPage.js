@@ -80,8 +80,7 @@ export const Portfolio = () => {
             <h5 className="card-title">Lululemon App</h5>
             <div className="card-description">
               <p>
-                Planning to implement the UI and data model, and then connect
-                the database using Firebase.
+			  A study project inspired by the Lululemon iOS app. Implemented map functionality using MapKit to replicate location-based features.
               </p>
               {/* <div className="card-bold">
                                 <p> - Notice -</p>
@@ -93,11 +92,11 @@ export const Portfolio = () => {
               <span>Xcode</span>
               <span>SwiftUI</span>
               <span>MapKit</span>
-              <span>Firebase</span>
-              <span>Firebase Authentication</span>
-              <span>CRUD</span>
+              {/* <span>Firebase</span>
+              <span>Firebase Authentication</span> */}
+              {/* <span>CRUD</span> */}
               <span>MVVM</span>
-              <span>SF Symbols</span>
+              {/* <span>SF Symbols</span> */}
               <span>Customized List View</span>
               <span>Custom Toolbar</span>
               <span>Tab View</span>
