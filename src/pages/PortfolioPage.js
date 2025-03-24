@@ -8,12 +8,57 @@ import dictionary from "../images/dictionary.png";
 import menu from "../images/menu.gif"
 import todo from "../images/todo.gif"
 import weatherApp from "../images/weatherApp.png"
+import lulu from "../images/lululemon.gif"
 import { AiOutlineLink, AiOutlineGithub } from "react-icons/ai"
 import { IoLogoYoutube } from "react-icons/io";
 export const Portfolio = () => {
     return (
         <div className="page-container mt-5">
             <div className="card-container">
+            <div className="card">
+                    <div className="card-img">
+                        <a href={lulu} target="_blank" rel="noopener noreferrer">
+                            <img src={lulu} className="card-img-top" alt="rpg-app" />
+                        </a>
+                    </div>
+                    <div className="card-body">
+                        <h5 className="card-title">Lululemon App</h5>
+                        <div className="card-description">
+                            <p>Currently working on this project.</p>
+                            <p>Planning to implement the UI and data model, and then connect the database using Firebase.</p>
+                            {/* <div className="card-bold">
+                                <p> - Notice -</p>
+                                <p> This app is optimized for PC browsers only.</p>
+                            </div> */}
+                        </div>
+                        {/* <p className="card-teck-stack">Tech Stack</p> */}
+                        <div className="card-teck-inidividual">
+                            <span>Xcode</span>
+                            <span>SwiftUI</span>
+                            <span>MapKit</span>
+                            <span>Firebase</span>
+                            <span>Firebase Authentication</span>
+                            <span>CRUD</span>
+                            <span>MVVM</span>
+                            <span>SF Symbols</span>
+                            <span>Customized List View</span>
+                            <span>Custom Toolbar</span>
+                            <span>Tab View</span>
+                        </div>
+                        <button className="card-button" onClick={() => { window.open("https://github.com/elriot/Lululemon", "_blank") }}>
+                            <AiOutlineGithub />
+                            <span>Github Repository</span>
+                        </button>
+                        {/* <button className="card-button button-web" onClick={() => { window.open("https://elriot.github.io/rpg_portfolio/", "_blank") }} >
+                            <AiOutlineLink />
+                            <span>Live Web</span>
+                        </button>
+                        <button className="card-button button-web" onClick={() => { window.open("https://youtu.be/NttITK7jMik", "_blank") }}>
+                            <IoLogoYoutube />
+                            <span>Demo</span>
+                        </button> */}
+                    </div>
+                </div>
 
                 <div className="card">
                     <div className="card-img">
