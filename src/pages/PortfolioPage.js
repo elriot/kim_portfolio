@@ -10,6 +10,7 @@ import todo from "../images/todo.gif";
 import weatherApp from "../images/weatherApp.png";
 import lulu from "../images/lululemon.gif";
 import ball from "../images/ball.png";
+import blog from "../images/blog.png";
 
 import { AiOutlineLink, AiOutlineGithub } from "react-icons/ai";
 import { FaUnity } from "react-icons/fa6";
@@ -18,6 +19,56 @@ export const Portfolio = () => {
   return (
     <div className="page-container mt-5">
       <div className="card-container">
+
+        <div className="card">
+          <div className="card-img">
+            <a href={blog} target="_blank" rel="noopener noreferrer">
+              <img src={blog} className="card-img-top" alt="panda-app" />
+            </a>
+          </div>
+          <div className="card-body">
+            <h5 className="card-title">Japan Onsen Tour Guide Blog</h5>
+            <div className="card-description">
+              <p>
+                This project is a tour guide blog created as a team assignment for a BCIT Technical Writing course.
+              </p>
+              <p>
+                Each team member has completed their part on Squarespace, and I’m currently transferring and rebuilding it into a Vite + React project.
+              </p>
+							<p className="">
+								🔸 The project is currently in progress. Some errors might occur on certain pages.
+							</p>
+            </div>
+            {/* <p className="card-teck-stack">Tech Stack</p> */}
+            <div className="card-teck-inidividual">
+              <span>Vite + React</span>
+              <span>Tilewind CSS</span>
+              <span>React Router</span>
+              <span>Reusable Components</span>
+							<span>Responsive Design</span>
+            </div>
+            <button
+              className="card-button"
+              onClick={() => {
+                window.open("https://github.com/elriot/JapanOnsenTour", "_blank");
+              }}
+            >
+              <AiOutlineGithub />
+              <span>Github</span>
+            </button>
+            <button
+              className="card-button button-web"
+              onClick={() => {
+                window.open("https://elriot.github.io/JapanOnsenTour/", "_blank");
+              }}
+            >
+              <AiOutlineLink />
+              <span>Live Web</span>
+            </button>
+          </div>
+        </div>
+
+
         <div className="card">
           <div className="card-img">
             <a href={ball} target="_blank" rel="noopener noreferrer">
