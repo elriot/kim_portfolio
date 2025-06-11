@@ -20,7 +20,7 @@
     padding-bottom: 0.5em;
 }
 .comment-text {
-    color: lightgray
+    color: lightgray;
 }
 .function-name{
     color: #e4bb68
@@ -33,10 +33,11 @@
 .animated-text {
     color: #e06c75;
     display: inline-block;
-    opacity: 1;
+    opacity: ;
     transition: opacity 1s ease-in-out;
 }
 
 .fade-out {
     opacity: 0;
 }
+

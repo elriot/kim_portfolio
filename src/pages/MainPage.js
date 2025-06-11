@@ -5,7 +5,11 @@ import './MainPage2.css';
 export const MainPage = () => {
     const [text, setText] = useState("Welcome!");
     const [fade, setFade] = useState(false);
-    const texts = ["Hello!", "Enjoy", "My Homepage"];
+    const texts = [
+  "Welcome to my little corner of the internet",
+  "Click around — it's all handmade!",
+  "Hope you enjoy your stay 🍀"
+];
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -27,8 +31,8 @@ export const MainPage = () => {
 
     return (
         <div className="main-container page-container-height">
-            <span className="comment-text comment">// Welcoming message for everyone</span>
-            <h1 className="main-text">
+            <span className="comment-text comment">// if (isHuman && passedAIFilter)</span>
+            <h1 className="main-text text">
                 <span className="function-name">print</span>
                 <span className="function-parentheses">(</span>
                 <span className={`animated-text func2 ${fade ? 'fade-out' : ''}`}>"{text}"</span>
