@@ -29,12 +29,9 @@ export const Portfolio = () => {
           <div className="card-body">
             <h5 className="card-title">Japan Onsen Tour Guide Blog</h5>
             <div className="card-description">
-              <p>
-                This project is a tour guide blog created as a team assignment for a BCIT Technical Writing course.
-              </p>
-              <p>
-                Each team member has completed their part on Squarespace, and I’m currently transferring and rebuilding it into a Vite + React project.
-              </p>
+							<p>
+								Tour-guide blog for a BCIT Technical Writing project, built with <strong>Vite + React</strong> and structured as reusable components for easy content updates.
+							</p>
 							<p className="">
 								🔸 The project is currently in progress. Some errors might occur on certain pages.
 							</p>
