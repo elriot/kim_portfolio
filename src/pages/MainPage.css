@@ -25,7 +25,7 @@
 }
 
 .terminal-header {
-  background: #e8e8ed;
+  background: #d1d1d6; 
   padding: 8px 12px;
   display: flex;
   align-items: center;
@@ -33,8 +33,9 @@
 }
 
 [data-theme='dark'] .terminal-header {
-  background: #333333;
+  background: #333333; 
 }
+
 
 .terminal-buttons {
   display: flex;
@@ -66,7 +67,7 @@
 
 .command-line, .output-line, .input-form {
   display: flex;
-  white-space: pre-wrap; /* Allows text to wrap */
+  white-space: pre-wrap;
   word-break: break-all;
 }
 
@@ -81,7 +82,7 @@
 }
 
 .command-line .line-text {
-  color: var(--text-primary); /* User's commands are primary text */
+  color: var(--text-primary);
 }
 
 /* --- Input & Cursor --- */
@@ -97,7 +98,7 @@
   color: var(--text-primary);
   font-family: 'JetBrains Mono', monospace;
   font-size: 1rem;
-  caret-color: var(--text-primary); /* The blinking cursor color */
+  caret-color: var(--text-primary);
 }
 
 /* --- Mobile Responsiveness --- */
@@ -107,7 +108,7 @@
     align-items: flex-start;
   }
   .terminal-window {
-    height: calc(100vh - 100px); /* Adjust height for mobile viewport */
+    height: calc(100vh - 100px);
   }
   .terminal-body {
     font-size: 0.9rem;
