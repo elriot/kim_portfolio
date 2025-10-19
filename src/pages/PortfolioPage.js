@@ -1,5 +1,5 @@
 import "./PortfolioPage.css";
-import { portfolioData } from "../data/portfolioData"; // 데이터 파일 import
+import { portfolioData } from "../data/portfolioData";
 import { AiOutlineLink, AiOutlineGithub } from "react-icons/ai";
 import { FaUnity } from "react-icons/fa6";
 import { IoLogoYoutube } from "react-icons/io";
@@ -23,24 +23,28 @@ export const Portfolio = () => {
               </a>
             </div>
             <div className="card-body">
-              <h5 className="card-title">{project.title}</h5>
-
-              <div className="card-description">
-                {project.description.map((line, index) => (
-                  <p key={index} dangerouslySetInnerHTML={{ __html: line }} />
-                ))}
+              <div className="card-main-content">
+                <h5 className="card-title">{project.title}</h5>
+                <div className="card-description">
+                  {project.description.map((line, index) => (
+                    <p key={index} dangerouslySetInnerHTML={{ __html: line }} />
+                  ))}
+                </div>
               </div>
 
-              <div className="card-teck-inidividual">
-                {project.tags.map((tag, index) => (
-                  <span key={index}>{tag}</span>
-                ))}
+              <div className="tech-stack-container">
+                {/* <h6 className="tech-stack-title">Tech Stack</h6> */}
+                <div className="card-teck-inidividual">
+                  {project.tags.map((tag, index) => (
+                    <span key={index}>{tag}</span>
+                  ))}
+                </div>
               </div>
 
               <div className="card-buttons">
                 {project.links.map((link, index) => {
                   const buttonInfo = buttonComponents[link.type];
-                  if (!buttonInfo) return null; // 정의되지 않은 타입이면 버튼 렌더링 안함
+                  if (!buttonInfo) return null;
 
                   return (
                     <button
