@@ -1,177 +1,47 @@
-@import url('https://fonts.googleapis.com/css?family=Audiowide');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
 
+/* --- Main Container --- */
 .main-container {
-    position: absolute;
-    /* background-color: black; */
-    width: 100%;
-    padding: 2em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #dfcc86;
-    animation: color 20s infinite linear;
+  background-color: var(--background-color);
+  font-family: 'JetBrains Mono', monospace;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 1rem;
+  box-sizing: border-box;
 }
 
-@keyframes color {
-    0% {
-        background: rgb(0, 51, 102);
-    }
-
-    20% {
-        background: rgb(54, 69, 79);
-    }
-
-    40% {
-        background: rgb(1, 68, 33);
-    }
-
-    60% {
-        background: rgb(102, 0, 51);
-    }
-
-    80% {
-        background: rgb(101, 67, 33);
-    }
-
-    100% {
-        background: rgb(50, 50, 50);
-    }
+/* --- Code Text Styling --- */
+.comment-text {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  margin-bottom: 1rem;
 }
 
-.title {
-    text-align: center;
-    font-family: 'Audiowide', sans-serif;
-    font-size: 5em;
-    color: #FFFFFF;
-    top: 50vh;
-    left: 50vw;
-    z-index: 3;
-    font-weight: bold;
-    text-shadow: 2px 2px 4px #3d3939;
-    letter-spacing: 1.7px;
-    line-height: 1.6;
+.main-text {
+  font-size: clamp(1.5rem, 5vw, 2.5rem); /* Responsive font size */
+  font-weight: 700;
 }
 
-
-.circles {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
+.function-name {
+  color: var(--text-primary);
 }
 
-.circles li {
-    position: absolute;
-    display: block;
-    list-style: none;
-    width: 20px;
-    height: 20px;
-    background: rgba(230, 245, 18, 1.0);
-    animation: animate 25s linear infinite;
-    bottom: -150px;
-
+.function-parentheses {
+  color: var(--text-secondary);
 }
 
-.circles li:nth-child(1) {
-    left: 25%;
-    width: 80px;
-    height: 80px;
-    animation-delay: 0s;
-    background-color: rgb(128, 0, 128);
+.animated-text {
+  /* Use the primary blue for the string, like a link */
+  color: var(--button-primary-bg); 
+  font-weight: 400;
+  display: inline-block;
+  transition: opacity 1s ease-in-out;
 }
 
-
-.circles li:nth-child(2) {
-    left: 10%;
-    width: 20px;
-    height: 20px;
-    animation-delay: 2s;
-    animation-duration: 12s;
-    background-color: rgb(255, 127, 80);
-}
-
-.circles li:nth-child(3) {
-    left: 70%;
-    width: 20px;
-    height: 20px;
-    animation-delay: 4s;
-    background-color: rgb(127, 255, 212);
-}
-
-.circles li:nth-child(4) {
-    left: 40%;
-    width: 60px;
-    height: 60px;
-    animation-delay: 0s;
-    animation-duration: 18s;
-    background-color: rgb(255, 215, 0);
-}
-
-.circles li:nth-child(5) {
-    left: 65%;
-    width: 20px;
-    height: 20px;
-    animation-delay: 0s;
-    background-color: rgb(245, 245, 220)
-}
-
-.circles li:nth-child(6) {
-    left: 75%;
-    width: 110px;
-    height: 110px;
-    animation-delay: 3s;
-    background-color: rgb(144, 238, 144);
-}
-
-.circles li:nth-child(7) {
-    left: 35%;
-    width: 150px;
-    height: 150px;
-    animation-delay: 7s;
-    background-color: rgb(230, 230, 250);
-}
-
-.circles li:nth-child(8) {
-    left: 50%;
-    width: 25px;
-    height: 25px;
-    animation-delay: 15s;
-    animation-duration: 45s;
-    background-color: rgb(255, 182, 193);
-}
-
-.circles li:nth-child(9) {
-    left: 20%;
-    width: 15px;
-    height: 15px;
-    animation-delay: 2s;
-    animation-duration: 35s;
-    background-color: rgb(173, 216, 230);
-}
-
-.circles li:nth-child(10) {
-    left: 85%;
-    width: 150px;
-    height: 150px;
-    animation-delay: 0s;
-    animation-duration: 11s;
-    background-color: rgb(211, 211, 211);
-}
-
-
-
-@keyframes animate {
-    0% {
-        transform: translateY(0) rotate(0deg);
-        opacity: 1;
-        border-radius: 0;
-    }
-
-    100% {
-        transform: translateY(-1000px) rotate(720deg);
-        opacity: 0;
-        border-radius: 50%;
-    }
+.fade-out {
+  opacity: 0;
 }
