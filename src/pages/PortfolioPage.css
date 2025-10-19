@@ -3,16 +3,16 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 24px; /* 카드의 간격을 벌려 여백 확보 */
+  gap: 24px;
   padding: 24px;
 }
 
 /* --- Card Base Style --- */
 .card {
-  background-color: #ffffff; /* 순백색 배경 */
-  border-radius: 18px; /* 애플 스타일의 둥근 모서리 */
+  background-color: #ffffff;
+  border-radius: 18px;
   border: 1px solid rgba(0, 0, 0, 0.08);
-  overflow: hidden; /* 내부 요소가 모서리를 벗어나지 않도록 */
+  overflow: hidden;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
@@ -20,20 +20,20 @@
 }
 
 .card:hover {
-  transform: translateY(-5px); /* 살짝 떠오르는 효과 */
+  transform: translateY(-5px);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
 }
 
 /* --- Card Sizing (Responsive) --- */
 @media (max-width: 767px) {
-  .card { width: calc(100% - 20px); } /* Mobile: 1열 */
+  .card { width: calc(100% - 20px); }
 }
 @media (min-width: 768px) and (max-width: 1023px) {
-  .card { width: calc(50% - 24px); } /* Tablet: 2열 */
+  .card { width: calc(50% - 24px); }
 }
 @media (min-width: 1024px) {
-  .card { width: calc(33.333% - 24px); } /* Desktop: 3열 */
-  .card-container { max-width: 1200px; margin: 0 auto; } /* 데스크탑에서 최대 너비 제한 */
+  .card { width: calc(33.333% - 24px); }
+  .card-container { max-width: 1200px; margin: 0 auto; }
 }
 
 /* --- Card Content --- */
@@ -42,45 +42,49 @@
   text-align: center;
   display: flex;
   flex-direction: column;
-  flex-grow: 1; /* 카드의 높이가 달라도 body가 늘어나서 맞춤 */
+  flex-grow: 1;
 }
 
 /* --- Image --- */
 .card-img {
   width: 100%;
   margin: 0;
-  filter: none; /* 기존 drop-shadow 제거 */
+  filter: none;
   overflow: hidden;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08); /* 이미지와 콘텐츠 구분선 */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  background-color: #f5f5f7;
 }
 
 .card-img-top {
   width: 100%;
-  object-fit: cover; /* 이미지가 영역을 꽉 채우도록 변경 */
-  height: 220px; /* 모든 카드의 이미지 높이를 통일 */
+  object-fit: contain;
+  height: 220px;
   transition: transform 0.4s ease-in-out;
   display: block;
 }
 
 .card-img-top:hover {
-  transform: scale(1.05); /* 호버 효과를 더 부드럽게 변경 */
+  transform: scale(1.05);
 }
 
 /* --- Typography --- */
 .card-title {
-  font-size: 1.5rem; /* 24px */
-  font-weight: 600; /* 조금 더 굵게 */
-  color: #1d1d1f; /* 애플의 메인 텍스트 색상 */
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1d1d1f;
   margin-bottom: 12px;
 }
 
+/* --- 수정된 부분 --- */
 .card-description {
-  font-size: 1rem; /* 16px */
+  font-size: 1rem;
   line-height: 1.5;
-  color: #515154; /* 본문 텍스트 색상 */
+  color: #515154;
   margin-bottom: 24px;
-  flex-grow: 1; /* 설명 부분이 늘어나서 버튼을 아래로 밀어줌 */
+  /* flex-grow: 1;  <-- 이 줄을 삭제했습니다! */
 }
+/* --- 수정 끝 --- */
+
 .card-description p {
   margin: 0 0 8px 0;
 }
@@ -90,14 +94,14 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 8px; /* 태그 사이 간격 */
+  gap: 8px;
   margin-bottom: 24px;
 }
 
 .card-teck-inidividual span {
-  background-color: #f5f5f7; /* 애플의 라이트 그레이 배경 */
-  color: #515154; /* 텍스트 색상 변경 */
-  font-size: 0.75rem; /* 12px, 더 작고 깔끔하게 */
+  background-color: #f5f5f7;
+  color: #515154;
+  font-size: 0.75rem;
   padding: 4px 12px;
   border-radius: 12px;
   font-weight: 500;
@@ -108,41 +112,43 @@
   display: flex;
   justify-content: center;
   gap: 12px;
-  margin-top: auto; /* 버튼들을 항상 카드 하단에 위치시킴 */
+  margin-top: auto; /* 이 속성이 버튼 그룹을 항상 아래로 밀어줍니다 */
+  flex-wrap: wrap;
 }
 
+/* Base styles for all buttons */
 .card-button {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  font-size: 0.9rem; /* 14px */
+  font-size: 0.9rem;
   font-weight: 500;
   padding: 8px 20px;
-  border-radius: 980px; /* 완전한 알약 모양 */
+  border-radius: 980px;
   border: none;
   cursor: pointer;
   transition: background-color 0.2s ease, color 0.2s ease;
-  filter: none; /* 기존 drop-shadow 제거 */
+  filter: none;
 }
 
-/* Github Button (Secondary) */
-.card-button {
-  background-color: #f5f5f7;
-  color: #0071e3; /* 애플 블루 */
-}
-
-.card-button:hover {
+/* Secondary buttons like Github */
+.card-button:not(.button-web) {
   background-color: #e8e8ed;
+  color: #1d1d1f;
 }
 
-/* Live Web Button (Primary) */
+.card-button:not(.button-web):hover {
+  background-color: #d1d1d6;
+}
+
+/* Primary buttons like Live Web, Demo, Play */
 .button-web {
-  background-color: #0071e3; /* 애플 블루 */
+  background-color: #0071e3;
   color: #ffffff;
 }
 
 .button-web:hover {
-  background-color: #0077ed; /* 호버 시 살짝 밝게 */
+  background-color: #0077ed;
 }
 
 .card-button svg {
