@@ -1,142 +1,150 @@
+/* --- General Layout --- */
 .card-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center; 
-  padding-bottom: 30px;
+  justify-content: center;
+  gap: 24px; /* 카드의 간격을 벌려 여백 확보 */
+  padding: 24px;
 }
 
+/* --- Card Base Style --- */
 .card {
-  width: calc(100% - 20px); /* mobiles */
-  margin: 10px;
-  padding: 5px;
-  margin-bottom: 50px;
-}
-@media only screen and (min-width: 768px) { /* tablets */
-  
+  background-color: #ffffff; /* 순백색 배경 */
+  border-radius: 18px; /* 애플 스타일의 둥근 모서리 */
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  overflow: hidden; /* 내부 요소가 모서리를 벗어나지 않도록 */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
 }
 
-@media only screen and (min-width: 1024px) { /* desktop*/
-  .card {
-    width: calc(50% - 20px); /* 2 cards in row */
-  }
+.card:hover {
+  transform: translateY(-5px); /* 살짝 떠오르는 효과 */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
 }
-@media only screen and (min-width: 2048px) { /* desktop-wide*/
-  .card {
-    width: calc(33% - 20px); /* 3 cards in row */
-  }
+
+/* --- Card Sizing (Responsive) --- */
+@media (max-width: 767px) {
+  .card { width: calc(100% - 20px); } /* Mobile: 1열 */
 }
-.card-title {
-  /* font-family: Cambria, serif; */
-  font-weight: bolder;
-  font-size: x-large;
-  margin-bottom: 30px;
-  /* text-decoration: */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .card { width: calc(50% - 24px); } /* Tablet: 2열 */
 }
+@media (min-width: 1024px) {
+  .card { width: calc(33.333% - 24px); } /* Desktop: 3열 */
+  .card-container { max-width: 1200px; margin: 0 auto; } /* 데스크탑에서 최대 너비 제한 */
+}
+
+/* --- Card Content --- */
+.card-body {
+  padding: 24px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* 카드의 높이가 달라도 body가 늘어나서 맞춤 */
+}
+
+/* --- Image --- */
 .card-img {
-  width: 80%;
-  margin: auto;
-  margin-top: 20px;
-  filter: drop-shadow(-2px 10px 10px rgba(0, 0, 0, 0.2));
+  width: 100%;
+  margin: 0;
+  filter: none; /* 기존 drop-shadow 제거 */
   overflow: hidden;
-  /* object-fit: cover; */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08); /* 이미지와 콘텐츠 구분선 */
 }
 
 .card-img-top {
   width: 100%;
-  max-width: 300px;
-  max-height: 400px;
-  object-fit: contain;
-  transition: transform 0.4s ease-in-out; 
+  object-fit: cover; /* 이미지가 영역을 꽉 채우도록 변경 */
+  height: 220px; /* 모든 카드의 이미지 높이를 통일 */
+  transition: transform 0.4s ease-in-out;
+  display: block;
 }
 
 .card-img-top:hover {
-  transform: scale(1.3); /* 이미지 확대 */
+  transform: scale(1.05); /* 호버 효과를 더 부드럽게 변경 */
 }
 
-
-.card-description{
-  /* display: inline-block; */
-  font-size: large;
-  /* margin-bottom: 10px; */
-  line-height: 1.2;
-  margin-bottom: 30px;
+/* --- Typography --- */
+.card-title {
+  font-size: 1.5rem; /* 24px */
+  font-weight: 600; /* 조금 더 굵게 */
+  color: #1d1d1f; /* 애플의 메인 텍스트 색상 */
+  margin-bottom: 12px;
 }
-/* .card-description br{
-  margin-bottom: 2px;
-} */
 
-.card-teck-stack {
-  margin-bottom: 3px;
-  background-color: rgb(212, 229, 243);
-  border-radius: 2px;
-  /* font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; */
-  font-weight: bolder;
-  
+.card-description {
+  font-size: 1rem; /* 16px */
+  line-height: 1.5;
+  color: #515154; /* 본문 텍스트 색상 */
+  margin-bottom: 24px;
+  flex-grow: 1; /* 설명 부분이 늘어나서 버튼을 아래로 밀어줌 */
 }
+.card-description p {
+  margin: 0 0 8px 0;
+}
+
+/* --- Tech Tags --- */
 .card-teck-inidividual {
-  /* overflow-x: auto; */
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
   flex-wrap: wrap;
-  max-width: 100%;
-  margin-bottom: 30px;
+  justify-content: center;
+  gap: 8px; /* 태그 사이 간격 */
+  margin-bottom: 24px;
 }
 
-.card-teck-inidividual span{
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: white;
-  background-color: rgb(62, 125, 181);
-  margin: 2px;
-  margin-bottom: 2px;
-  padding: 3px;
-  padding-left: 10px;
-  padding-right: 10px;
-  border-radius: 10px;
-  white-space: nowrap;  
-}
-.card{
-  border-width: 2px;
-  background-color: rgb(244, 242, 246);
+.card-teck-inidividual span {
+  background-color: #f5f5f7; /* 애플의 라이트 그레이 배경 */
+  color: #515154; /* 텍스트 색상 변경 */
+  font-size: 0.75rem; /* 12px, 더 작고 깔끔하게 */
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-weight: 500;
 }
 
-.card-button{
-  height: 40px;
-  /* text-decoration: none; */
-  margin-bottom: 5px;  
-  font-weight: 400;
-  border-radius: 40px;
-  border-color: rgb(150, 149, 150);  
-  background-color: rgb(150, 149, 150);
-  color :white;
-  /* border-inline-color: none; */
-  border-style: solid;
-  padding-left: 20px;
-  padding-right:20px;
-  transition: all 0.2s ease-in-out;
-  filter: drop-shadow(3px 3px 3px rgba(32, 12, 87, 0.3)); 
-  font-family: Trebuchet MS, sans-serif;
-  font-size: 1em;
-}
-.card-button svg{
-  font-size: 1.4em;
-}
-.card-button:hover{
-  border-color: rgba(145, 44, 145);
-  background-color:  rgba(145, 44, 145);
+/* --- Buttons --- */
+.card-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: auto; /* 버튼들을 항상 카드 하단에 위치시킴 */
 }
 
-.button-web{
-  margin-left: 10px;
+.card-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.9rem; /* 14px */
+  font-weight: 500;
+  padding: 8px 20px;
+  border-radius: 980px; /* 완전한 알약 모양 */
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  filter: none; /* 기존 drop-shadow 제거 */
 }
-.card-bold{
-  margin-top: 30px;
-  font-weight: 600;
-  color: gray;
-  /* color:blueviolet; */
-  margin-bottom: 50px;
+
+/* Github Button (Secondary) */
+.card-button {
+  background-color: #f5f5f7;
+  color: #0071e3; /* 애플 블루 */
 }
-.card-bold p{
-  margin: 0px;
+
+.card-button:hover {
+  background-color: #e8e8ed;
+}
+
+/* Live Web Button (Primary) */
+.button-web {
+  background-color: #0071e3; /* 애플 블루 */
+  color: #ffffff;
+}
+
+.button-web:hover {
+  background-color: #0077ed; /* 호버 시 살짝 밝게 */
+}
+
+.card-button svg {
+  font-size: 1.2em;
 }
