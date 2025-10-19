@@ -36,16 +36,8 @@
   background: #333333; 
 }
 
-
-.terminal-buttons {
-  display: flex;
-  gap: 8px;
-}
-.dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-}
+.terminal-buttons { display: flex; gap: 8px; }
+.dot { width: 12px; height: 12px; border-radius: 50%; }
 .dot.red { background: #ff5f56; }
 .dot.yellow { background: #ffbd2e; }
 .dot.green { background: #27c93f; }
@@ -63,26 +55,29 @@
   overflow-y: auto;
   font-size: 1rem;
   line-height: 1.6;
+  text-align: left; /* This is the fix */
 }
 
-.command-line, .output-line, .input-form {
+.command-line, .input-form {
   display: flex;
   white-space: pre-wrap;
   word-break: break-all;
+}
+
+.line-text {
+  color: var(--text-secondary);
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.command-line .line-text {
+  color: var(--text-primary);
 }
 
 .prompt-symbol {
   color: var(--text-primary);
   margin-right: 0.5rem;
   font-weight: 700;
-}
-
-.line-text {
-  color: var(--text-secondary);
-}
-
-.command-line .line-text {
-  color: var(--text-primary);
 }
 
 /* --- Input & Cursor --- */
@@ -101,16 +96,35 @@
   caret-color: var(--text-primary);
 }
 
+/* --- Help Command List Styling --- */
+.output-list {
+  color: var(--text-secondary);
+}
+
+.output-list p { margin: 0; }
+
+.output-list ul {
+  list-style-type: none;
+  padding-left: 1rem;
+  margin-top: 0.5rem;
+}
+
+.output-list li { display: flex; align-items: center; }
+.output-list li::before { content: "-"; margin-right: 0.75rem; }
+
+.command-name {
+  color: var(--text-primary);
+  font-weight: 500;
+  width: 100px;
+  flex-shrink: 0;
+}
+
+.command-name::after { content: ":"; margin-left: 0.5rem; }
+.command-description { color: var(--text-secondary); }
+
 /* --- Mobile Responsiveness --- */
 @media (max-width: 768px) {
-  .main-container {
-    padding: 1rem;
-    align-items: flex-start;
-  }
-  .terminal-window {
-    height: calc(100vh - 100px);
-  }
-  .terminal-body {
-    font-size: 0.9rem;
-  }
+  .main-container { padding: 1rem; align-items: flex-start; }
+  .terminal-window { height: calc(100vh - 100px); }
+  .terminal-body { font-size: 0.9rem; }
 }

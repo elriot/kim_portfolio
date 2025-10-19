@@ -9,11 +9,16 @@ const processCommand = (command, navigate) => {
 
   switch (cmd) {
     case 'help':
-      return `Available commands:
-- whois    : Learn more about me
-- projects : View my work
-- contact  : Get in touch
-- clear    : Clear the terminal screen`;
+      // Return a structured object instead of a plain string
+      return {
+        type: 'list',
+        lines: [
+          { command: 'whois', description: 'Learn more about me' },
+          { command: 'projects', description: 'View my work' },
+          { command: 'contact', description: 'Get in touch' },
+          { command: 'clear', description: 'Clear the terminal screen' },
+        ]
+      };
 
     case 'whois':
       navigate('/about');
@@ -28,14 +33,38 @@ const processCommand = (command, navigate) => {
       return 'Navigating to Contact...';
       
     case 'clear':
-      return 'clear'; // Special command handled by the component
+      return 'clear';
 
     default:
-      return `command not found: ${command}
-Type 'help' to see a list of available commands.`;
+      return `command not found: ${command}\nType 'help' to see a list of available commands.`;
   }
 };
 
+// --- Helper component to render different types of output ---
+const CommandOutput = ({ output }) => {
+  // Handle the structured list from the 'help' command
+  if (output && output.type === 'list') {
+    return (
+      <div className="output-list">
+        <p>Available commands:</p>
+        <ul>
+          {output.lines.map(line => (
+            <li key={line.command}>
+              <span className="command-name">{line.command}</span>
+              <span className="command-description">{line.description}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    );
+  }
+
+  // Handle all other simple text outputs
+  const text = output || '';
+  return (
+    <span className="line-text" dangerouslySetInnerHTML={{ __html: text.toString().replace(/\n/g, '<br />') }} />
+  );
+};
 
 export const MainPage = () => {
   const [history, setHistory] = useState([
@@ -47,20 +76,10 @@ export const MainPage = () => {
   const scrollRef = useRef(null);
   const navigate = useNavigate();
 
-  // Focus the input field on first render
-  useEffect(() => {
-    inputRef.current?.focus();
-  }, []);
+  useEffect(() => { inputRef.current?.focus(); }, []);
+  useEffect(() => { scrollRef.current?.scrollIntoView({ behavior: 'smooth' }); }, [history]);
 
-  // Scroll to the bottom whenever history changes
-  useEffect(() => {
-    scrollRef.current?.scrollIntoView({ behavior: 'smooth' });
-  }, [history]);
-
-
-  const handleInputChange = (e) => {
-    setInput(e.target.value);
-  };
+  const handleInputChange = (e) => { setInput(e.target.value); };
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
@@ -71,40 +90,35 @@ export const MainPage = () => {
     if (output === 'clear') {
       setHistory([]);
     } else {
-      const newHistory = [
-        ...history,
-        { text: input, isCommand: true },
-        { text: output, isCommand: false },
-      ];
-      setHistory(newHistory);
+      setHistory(prev => [...prev, { text: input, isCommand: true }, { text: output, isCommand: false }]);
     }
-    
     setInput('');
   };
 
-  // Allow the entire div to act as a focus area for the input
-  const focusInput = () => {
-    inputRef.current?.focus();
-  };
+  const focusInput = () => { inputRef.current?.focus(); };
 
-  return (
+return (
     <div className="main-container page-container-height" onClick={focusInput}>
       <div className="terminal-window">
         <div className="terminal-header">
           <div className="terminal-buttons">
-            <span className="dot red"></span>
-            <span className="dot yellow"></span>
-            <span className="dot green"></span>
+            <span className="dot red"></span><span className="dot yellow"></span><span className="dot green"></span>
           </div>
           <div className="terminal-title">soopin-kim -- -bash</div>
         </div>
         <div className="terminal-body">
-          {history.map((line, index) => (
-            <div key={index} className={line.isCommand ? 'command-line' : 'output-line'}>
-              {line.isCommand && <span className="prompt-symbol">$</span>}
-              <span className="line-text">{line.text}</span>
-            </div>
-          ))}
+          {history.map((line, index) => {
+            if (line.isCommand) {
+              return (
+                <div key={index} className="command-line">
+                  <span className="prompt-symbol">$</span>
+                  <span className="line-text">{line.text}</span>
+                </div>
+              );
+            } else {
+              return <CommandOutput key={index} output={line.text} />;
+            }
+          })}
           <form onSubmit={handleFormSubmit} className="input-form">
             <span className="prompt-symbol">$</span>
             <input
