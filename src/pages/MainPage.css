@@ -1,47 +1,115 @@
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
-
 /* --- Main Container --- */
 .main-container {
   background-color: var(--background-color);
   font-family: 'JetBrains Mono', monospace;
   width: 100%;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-align: center;
-  padding: 1rem;
+  padding: 2rem;
   box-sizing: border-box;
 }
 
-/* --- Code Text Styling --- */
-.comment-text {
-  color: var(--text-secondary);
-  font-size: 1rem;
-  margin-bottom: 1rem;
+/* --- Terminal Window --- */
+.terminal-window {
+  width: 100%;
+  max-width: 800px;
+  height: 600px;
+  background-color: var(--card-background);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
 
-.main-text {
-  font-size: clamp(1.5rem, 5vw, 2.5rem); /* Responsive font size */
+.terminal-header {
+  background: #e8e8ed;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--card-border);
+}
+
+[data-theme='dark'] .terminal-header {
+  background: #333333;
+}
+
+.terminal-buttons {
+  display: flex;
+  gap: 8px;
+}
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+.dot.red { background: #ff5f56; }
+.dot.yellow { background: #ffbd2e; }
+.dot.green { background: #27c93f; }
+
+.terminal-title {
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  margin: 0 auto;
+}
+
+/* --- Terminal Body & Text --- */
+.terminal-body {
+  flex-grow: 1;
+  padding: 1rem;
+  overflow-y: auto;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.command-line, .output-line, .input-form {
+  display: flex;
+  white-space: pre-wrap; /* Allows text to wrap */
+  word-break: break-all;
+}
+
+.prompt-symbol {
+  color: var(--text-primary);
+  margin-right: 0.5rem;
   font-weight: 700;
 }
 
-.function-name {
-  color: var(--text-primary);
-}
-
-.function-parentheses {
+.line-text {
   color: var(--text-secondary);
 }
 
-.animated-text {
-  /* Use the primary blue for the string, like a link */
-  color: var(--button-primary-bg); 
-  font-weight: 400;
-  display: inline-block;
-  transition: opacity 1s ease-in-out;
+.command-line .line-text {
+  color: var(--text-primary); /* User's commands are primary text */
 }
 
-.fade-out {
-  opacity: 0;
+/* --- Input & Cursor --- */
+.input-form {
+  width: 100%;
+}
+
+.terminal-input {
+  flex-grow: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--text-primary);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1rem;
+  caret-color: var(--text-primary); /* The blinking cursor color */
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 768px) {
+  .main-container {
+    padding: 1rem;
+    align-items: flex-start;
+  }
+  .terminal-window {
+    height: calc(100vh - 100px); /* Adjust height for mobile viewport */
+  }
+  .terminal-body {
+    font-size: 0.9rem;
+  }
 }
