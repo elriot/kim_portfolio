@@ -15,7 +15,7 @@ export const ContactPage = () => {
         <div className="page-container">
             <div className="contact-card">
                 <div className="contact-header">
-                    <h2>Get in Touch</h2>
+                    <h2>Get in Touch 👋</h2>
                     <p>
                         If you'd like to talk about a project, or just say hello, feel free to reach out below!
                     </p>
