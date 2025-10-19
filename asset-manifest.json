@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/kim_portfolio/static/css/main.d75803de.css",
-    "main.js": "/kim_portfolio/static/js/main.6658707f.js",
+    "main.css": "/kim_portfolio/static/css/main.8003f0a9.css",
+    "main.js": "/kim_portfolio/static/js/main.4a000963.js",
     "static/js/787.01724b9e.chunk.js": "/kim_portfolio/static/js/787.01724b9e.chunk.js",
     "static/media/lululemon.gif": "/kim_portfolio/static/media/lululemon.d466482ec2f9178071b6.gif",
     "static/media/blog.png": "/kim_portfolio/static/media/blog.7fa18ac6698fff54dc37.png",
@@ -18,12 +18,12 @@
     "static/media/profile.jpg": "/kim_portfolio/static/media/profile.70b82abf53e0a537295f.jpg",
     "static/media/condo.png": "/kim_portfolio/static/media/condo.58eb0c77cf96ba69e4b7.png",
     "index.html": "/kim_portfolio/index.html",
-    "main.d75803de.css.map": "/kim_portfolio/static/css/main.d75803de.css.map",
-    "main.6658707f.js.map": "/kim_portfolio/static/js/main.6658707f.js.map",
+    "main.8003f0a9.css.map": "/kim_portfolio/static/css/main.8003f0a9.css.map",
+    "main.4a000963.js.map": "/kim_portfolio/static/js/main.4a000963.js.map",
     "787.01724b9e.chunk.js.map": "/kim_portfolio/static/js/787.01724b9e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d75803de.css",
-    "static/js/main.6658707f.js"
+    "static/css/main.8003f0a9.css",
+    "static/js/main.4a000963.js"
   ]
 }
