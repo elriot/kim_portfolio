@@ -1,6 +1,6 @@
 /* --- Navbar Base --- */
 .navbar {
-  background-color: var(--card-background); /* 카드와 동일한 배경색 사용 */
+  background-color: var(--card-background);
   border-bottom: 1px solid var(--card-border);
   transition: background-color 0.3s ease;
   padding: 0.5rem 1rem;
@@ -11,56 +11,94 @@
   width: 100%;
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   justify-content: space-between;
 }
 
 /* --- Brand/Title --- */
 .navbar-brand {
-  color: var(--text-primary) !important; /* !important로 부트스트랩 스타일 덮어쓰기 */
+  color: var(--text-primary) !important;
   font-weight: 600;
 }
 
 /* --- Nav Links --- */
 .nav-link {
-  color: var(--text-secondary); /* 기본 링크 색상 */
+  color: var(--text-secondary);
   text-decoration: none;
   padding: 0.5rem 1rem;
   transition: color 0.2s ease;
 }
 
 .nav-link:hover {
-  color: var(--text-primary); /* 호버 시 색상 */
+  color: var(--text-primary);
   text-decoration: none;
 }
 
 .nav-link.active {
-  color: var(--text-primary); /* 활성 링크 색상 */
+  color: var(--text-primary);
   font-weight: bold;
 }
 
-/* --- Toggler Icon (Hamburger Menu) --- */
+/* --- 오른쪽 컨트롤 버튼 --- */
+.header-controls {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* --- 수정된 부분: Toggler Icon (햄버거 메뉴) --- */
 .navbar-toggler {
-  border-color: rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--card-border) !important;
+  padding: 0.25rem 0.5rem;
 }
 
-/* 아이콘 색상을 테마에 맞게 변경 (SVG 필터 사용) */
+.navbar-toggler-icon {
+  /* Bootstrap 기본 아이콘 제거 */
+  background-image: none;
+  width: 1.5em;
+  height: 1.5em;
+}
+
+/* 라이트 모드일 때의 아이콘 (어두운 색 선 3개) */
 [data-theme='light'] .navbar-toggler-icon {
-  filter: invert(0); /* 기본값 (검은색) */
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(29, 29, 31, 0.8)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
+/* 다크 모드일 때의 아이콘 (밝은 색 선 3개) */
 [data-theme='dark'] .navbar-toggler-icon {
-  filter: invert(1) brightness(1.5); /* 색상 반전 (흰색) */
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.8)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
+/* --- 수정 끝 --- */
 
-/* --- Desktop Layout Alignment --- */
+/* --- Desktop Layout --- */
 @media (min-width: 992px) {
+  .header-controls {
+    display: none;
+  }
   .navbar-collapse {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    width: 100%;
+    width: auto;
+    flex-grow: 1;
   }
   .navbar-nav {
-    margin-right: 1rem; /* 링크와 토글 버튼 사이 간격 */
+    margin-right: 1rem;
+  }
+  /* 데스크탑에서는 테마 버튼을 메뉴 안 오른쪽에 다시 표시 */
+  .navbar-collapse .header-controls {
+    display: flex;
+  }
+}
+
+/* --- Mobile Layout --- */
+@media (max-width: 991.98px) {
+  .navbar-collapse {
+    width: 100%;
+    flex-basis: 100%;
+  }
+  /* 모바일 메뉴 목록 안의 테마 버튼은 숨김 */
+  .navbar-collapse .header-controls {
+    display: none;
   }
 }

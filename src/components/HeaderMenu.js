@@ -9,7 +9,7 @@ const pageMap = {
     "/about": "About Me",
     "/portfolios": "Portfolio",
     "/contact": "Contact"
-}
+};
 
 export default function HeaderMenu() {
     const [isNavOpen, setIsNavOpen] = useState(false);
@@ -27,7 +27,7 @@ export default function HeaderMenu() {
         let finalTitle = !buttonVisible ? "" : "- " + title;
         setNavToggleVisible(buttonVisible);
         setNavTitle(finalTitle);
-    }
+    };
 
     const handleNavClick = (e) => {
         const link = e.target.href;
@@ -36,14 +36,14 @@ export default function HeaderMenu() {
             setTitle(navToggleVisible, path);
         }
         setIsNavOpen(false);
-    }
+    };
 
-    const handleResize = (e) => {
+    const handleResize = () => {
         if (toggleButtonRef.current) {
             const isButtonVisible = window.getComputedStyle(toggleButtonRef.current).display !== 'none';
             setTitle(isButtonVisible, location.pathname);
         }
-    }
+    };
 
     useEffect(() => {
         handleResize();
@@ -51,25 +51,30 @@ export default function HeaderMenu() {
         return () => {
             window.removeEventListener('resize', handleResize);
         };
-    }, [location.pathname]); // location.pathname added to dependency array
+    }, [location.pathname]);
 
     return (
         <div>
-            {/* --- 'bg-light' 클래스를 제거했습니다 --- */}
             <nav className="navbar navbar-expand-lg">
                 <div className="container nav-container">
                     <a className="navbar-brand" href="./">
                         Soopin Kim {navTitle}
                     </a>
-                    <button
-                        className="navbar-toggler"
-                        type="button"
-                        onClick={handleNavToggle}
-                        aria-expanded={isNavOpen}
-                        ref={toggleButtonRef}
-                    >
-                        <span className="navbar-toggler-icon"></span>
-                    </button>
+
+                    {/* --- 오른쪽 컨트롤 버튼들을 그룹으로 묶었습니다 --- */}
+                    <div className="header-controls">
+                        <ThemeToggleButton />
+                        <button
+                            className="navbar-toggler"
+                            type="button"
+                            onClick={handleNavToggle}
+                            aria-expanded={isNavOpen}
+                            ref={toggleButtonRef}
+                        >
+                            <span className="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+
                     <div className={`collapse navbar-collapse ${isNavOpen ? 'show' : ''}`}>
                         <ul className="navbar-nav ml-auto" onClick={handleNavClick}>
                             <li className="nav-item">
@@ -85,10 +90,9 @@ export default function HeaderMenu() {
                                 <NavLink className="nav-link" to="/contact">Contact</NavLink>
                             </li>
                         </ul>
-                        <ThemeToggleButton />
                     </div>
                 </div>
             </nav>
         </div>
-    )
+    );
 }
