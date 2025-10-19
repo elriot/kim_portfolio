@@ -1,17 +1,66 @@
+/* --- Navbar Base --- */
+.navbar {
+  background-color: var(--card-background); /* 카드와 동일한 배경색 사용 */
+  border-bottom: 1px solid var(--card-border);
+  transition: background-color 0.3s ease;
+  padding: 0.5rem 1rem;
+}
+
+.nav-container {
+  font-family: 'Trebuchet MS', sans-serif;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* --- Brand/Title --- */
+.navbar-brand {
+  color: var(--text-primary) !important; /* !important로 부트스트랩 스타일 덮어쓰기 */
+  font-weight: 600;
+}
+
+/* --- Nav Links --- */
 .nav-link {
-  color: gray;
+  color: var(--text-secondary); /* 기본 링크 색상 */
   text-decoration: none;
+  padding: 0.5rem 1rem;
+  transition: color 0.2s ease;
 }
 
 .nav-link:hover {
-  color: black;
-  text-decoration: underline;
+  color: var(--text-primary); /* 호버 시 색상 */
+  text-decoration: none;
 }
 
 .nav-link.active {
-  text-decoration: underline;
+  color: var(--text-primary); /* 활성 링크 색상 */
   font-weight: bold;
 }
-.nav-container{
-  font-family: Trebuchet MS, sans-serif;
+
+/* --- Toggler Icon (Hamburger Menu) --- */
+.navbar-toggler {
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+/* 아이콘 색상을 테마에 맞게 변경 (SVG 필터 사용) */
+[data-theme='light'] .navbar-toggler-icon {
+  filter: invert(0); /* 기본값 (검은색) */
+}
+
+[data-theme='dark'] .navbar-toggler-icon {
+  filter: invert(1) brightness(1.5); /* 색상 반전 (흰색) */
+}
+
+/* --- Desktop Layout Alignment --- */
+@media (min-width: 992px) {
+  .navbar-collapse {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+  }
+  .navbar-nav {
+    margin-right: 1rem; /* 링크와 토글 버튼 사이 간격 */
+  }
 }

@@ -1,4 +1,5 @@
-/* --- General Layout --- */
+/* Using the CSS variables defined in index.css */
+
 .card-container {
   display: flex;
   flex-wrap: wrap;
@@ -7,11 +8,11 @@
   padding: 24px;
 }
 
-/* --- Card Base Style --- */
 .card {
-  background-color: #ffffff;
+  background-color: var(--card-background);
+  color: var(--text-secondary);
   border-radius: 18px;
-  border: 1px solid rgba(0, 0, 0, 0.08);
+  border: 1px solid var(--card-border);
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -24,19 +25,13 @@
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
 }
 
-/* --- Card Sizing (Responsive) --- */
-@media (max-width: 767px) {
-  .card { width: calc(100% - 20px); }
-}
-@media (min-width: 768px) and (max-width: 1023px) {
-  .card { width: calc(50% - 24px); }
-}
+@media (max-width: 767px) { .card { width: calc(100% - 20px); } }
+@media (min-width: 768px) and (max-width: 1023px) { .card { width: calc(50% - 24px); } }
 @media (min-width: 1024px) {
   .card { width: calc(33.333% - 24px); }
   .card-container { max-width: 1200px; margin: 0 auto; }
 }
 
-/* --- Card Content --- */
 .card-body {
   padding: 24px;
   text-align: center;
@@ -45,14 +40,12 @@
   flex-grow: 1;
 }
 
-/* --- Image --- */
 .card-img {
   width: 100%;
   margin: 0;
-  filter: none;
   overflow: hidden;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-  background-color: #f5f5f7;
+  border-bottom: 1px solid var(--card-border);
+  background-color: var(--background-color);
 }
 
 .card-img-top {
@@ -63,33 +56,23 @@
   display: block;
 }
 
-.card-img-top:hover {
-  transform: scale(1.05);
-}
+.card-img-top:hover { transform: scale(1.05); }
 
-/* --- Typography --- */
 .card-title {
   font-size: 1.5rem;
   font-weight: 600;
-  color: #1d1d1f;
+  color: var(--text-primary);
   margin-bottom: 12px;
 }
 
-/* --- 수정된 부분 --- */
 .card-description {
   font-size: 1rem;
   line-height: 1.5;
-  color: #515154;
+  color: var(--text-secondary);
   margin-bottom: 24px;
-  /* flex-grow: 1;  <-- 이 줄을 삭제했습니다! */
 }
-/* --- 수정 끝 --- */
+.card-description p { margin: 0 0 8px 0; }
 
-.card-description p {
-  margin: 0 0 8px 0;
-}
-
-/* --- Tech Tags --- */
 .card-teck-inidividual {
   display: flex;
   flex-wrap: wrap;
@@ -99,24 +82,22 @@
 }
 
 .card-teck-inidividual span {
-  background-color: #f5f5f7;
-  color: #515154;
+  background-color: var(--tag-background);
+  color: var(--text-secondary);
   font-size: 0.75rem;
   padding: 4px 12px;
   border-radius: 12px;
   font-weight: 500;
 }
 
-/* --- Buttons --- */
 .card-buttons {
   display: flex;
   justify-content: center;
   gap: 12px;
-  margin-top: auto; /* 이 속성이 버튼 그룹을 항상 아래로 밀어줍니다 */
+  margin-top: auto;
   flex-wrap: wrap;
 }
 
-/* Base styles for all buttons */
 .card-button {
   display: inline-flex;
   align-items: center;
@@ -128,29 +109,22 @@
   border: none;
   cursor: pointer;
   transition: background-color 0.2s ease, color 0.2s ease;
-  filter: none;
 }
 
-/* Secondary buttons like Github */
 .card-button:not(.button-web) {
-  background-color: #e8e8ed;
-  color: #1d1d1f;
+  background-color: var(--button-secondary-bg);
+  color: var(--button-secondary-text);
 }
 
 .card-button:not(.button-web):hover {
-  background-color: #d1d1d6;
+  background-color: var(--button-secondary-hover);
 }
 
-/* Primary buttons like Live Web, Demo, Play */
 .button-web {
-  background-color: #0071e3;
-  color: #ffffff;
+  background-color: var(--button-primary-bg);
+  color: var(--button-primary-text);
 }
 
-.button-web:hover {
-  background-color: #0077ed;
-}
+.button-web:hover { background-color: #0077ed; }
 
-.card-button svg {
-  font-size: 1.2em;
-}
+.card-button svg { font-size: 1.2em; }
