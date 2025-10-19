@@ -17,8 +17,8 @@ export const portfolioData = [
     image: blog,
     title: "Japan Onsen Tour Guide Blog",
     description: [
-      "Tour-guide blog for a BCIT Technical Writing project, built with <strong>Vite + React</strong> and structured as reusable components for easy content updates.",
-      "🔸 The project is currently in progress. Some errors might occur on certain pages."
+      "This project is a personal initiative to redevelop a tour-guide blog that was originally created with a team on Squarespace. I rebuilt it from the ground up using Vite + React, transforming it into a dynamic application with reusable components for easy content updates.",
+      "<small>🔸 The project is currently in progress. Some errors might occur on certain pages.</small>"
     ],
     tags: ["Vite + React", "Tilewind CSS", "React Router", "Reusable Components", "Responsive Design"],
     links: [

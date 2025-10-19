@@ -97,7 +97,7 @@ export const MainPage = () => {
 
   const focusInput = () => { inputRef.current?.focus(); };
 
-return (
+  return (
     <div className="main-container page-container-height" onClick={focusInput}>
       <div className="terminal-window">
         <div className="terminal-header">
@@ -107,18 +107,18 @@ return (
           <div className="terminal-title">soopin-kim -- -bash</div>
         </div>
         <div className="terminal-body">
-          {history.map((line, index) => {
-            if (line.isCommand) {
-              return (
-                <div key={index} className="command-line">
+          {history.map((line, index) => (
+            <div key={index} className={line.isCommand ? 'command-line' : 'output-line'}>
+              {line.isCommand ? (
+                <>
                   <span className="prompt-symbol">$</span>
                   <span className="line-text">{line.text}</span>
-                </div>
-              );
-            } else {
-              return <CommandOutput key={index} output={line.text} />;
-            }
-          })}
+                </>
+              ) : (
+                <CommandOutput output={line.text} />
+              )}
+            </div>
+          ))}
           <form onSubmit={handleFormSubmit} className="input-form">
             <span className="prompt-symbol">$</span>
             <input
