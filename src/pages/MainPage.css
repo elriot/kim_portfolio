@@ -1,177 +1,130 @@
-@import url('https://fonts.googleapis.com/css?family=Audiowide');
-
+/* --- Main Container --- */
 .main-container {
-    position: absolute;
-    /* background-color: black; */
-    width: 100%;
-    padding: 2em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #dfcc86;
-    animation: color 20s infinite linear;
+  background-color: var(--background-color);
+  font-family: 'JetBrains Mono', monospace;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  box-sizing: border-box;
 }
 
-@keyframes color {
-    0% {
-        background: rgb(0, 51, 102);
-    }
-
-    20% {
-        background: rgb(54, 69, 79);
-    }
-
-    40% {
-        background: rgb(1, 68, 33);
-    }
-
-    60% {
-        background: rgb(102, 0, 51);
-    }
-
-    80% {
-        background: rgb(101, 67, 33);
-    }
-
-    100% {
-        background: rgb(50, 50, 50);
-    }
+/* --- Terminal Window --- */
+.terminal-window {
+  width: 100%;
+  max-width: 800px;
+  height: 600px;
+  background-color: var(--card-background);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
 
-.title {
-    text-align: center;
-    font-family: 'Audiowide', sans-serif;
-    font-size: 5em;
-    color: #FFFFFF;
-    top: 50vh;
-    left: 50vw;
-    z-index: 3;
-    font-weight: bold;
-    text-shadow: 2px 2px 4px #3d3939;
-    letter-spacing: 1.7px;
-    line-height: 1.6;
+.terminal-header {
+  background: #d1d1d6; 
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--card-border);
 }
 
-
-.circles {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
+[data-theme='dark'] .terminal-header {
+  background: #333333; 
 }
 
-.circles li {
-    position: absolute;
-    display: block;
-    list-style: none;
-    width: 20px;
-    height: 20px;
-    background: rgba(230, 245, 18, 1.0);
-    animation: animate 25s linear infinite;
-    bottom: -150px;
+.terminal-buttons { display: flex; gap: 8px; }
+.dot { width: 12px; height: 12px; border-radius: 50%; }
+.dot.red { background: #ff5f56; }
+.dot.yellow { background: #ffbd2e; }
+.dot.green { background: #27c93f; }
 
+.terminal-title {
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  margin: 0 auto;
 }
 
-.circles li:nth-child(1) {
-    left: 25%;
-    width: 80px;
-    height: 80px;
-    animation-delay: 0s;
-    background-color: rgb(128, 0, 128);
+/* --- Terminal Body & Text --- */
+.terminal-body {
+  flex-grow: 1;
+  padding: 1rem;
+  overflow-y: auto;
+  font-size: 1rem;
+  line-height: 1.6;
+  text-align: left; /* This is the fix */
 }
 
-
-.circles li:nth-child(2) {
-    left: 10%;
-    width: 20px;
-    height: 20px;
-    animation-delay: 2s;
-    animation-duration: 12s;
-    background-color: rgb(255, 127, 80);
+.command-line, .input-form {
+  display: flex;
+  white-space: pre-wrap;
+  word-break: break-all;
 }
 
-.circles li:nth-child(3) {
-    left: 70%;
-    width: 20px;
-    height: 20px;
-    animation-delay: 4s;
-    background-color: rgb(127, 255, 212);
+.line-text {
+  color: var(--text-secondary);
+  white-space: pre-wrap;
+  word-break: break-all;
 }
 
-.circles li:nth-child(4) {
-    left: 40%;
-    width: 60px;
-    height: 60px;
-    animation-delay: 0s;
-    animation-duration: 18s;
-    background-color: rgb(255, 215, 0);
+.command-line .line-text {
+  color: var(--text-primary);
 }
 
-.circles li:nth-child(5) {
-    left: 65%;
-    width: 20px;
-    height: 20px;
-    animation-delay: 0s;
-    background-color: rgb(245, 245, 220)
+.prompt-symbol {
+  color: var(--text-primary);
+  margin-right: 0.5rem;
+  font-weight: 700;
 }
 
-.circles li:nth-child(6) {
-    left: 75%;
-    width: 110px;
-    height: 110px;
-    animation-delay: 3s;
-    background-color: rgb(144, 238, 144);
+/* --- Input & Cursor --- */
+.input-form {
+  width: 100%;
 }
 
-.circles li:nth-child(7) {
-    left: 35%;
-    width: 150px;
-    height: 150px;
-    animation-delay: 7s;
-    background-color: rgb(230, 230, 250);
+.terminal-input {
+  flex-grow: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--text-primary);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1rem;
+  caret-color: var(--text-primary);
 }
 
-.circles li:nth-child(8) {
-    left: 50%;
-    width: 25px;
-    height: 25px;
-    animation-delay: 15s;
-    animation-duration: 45s;
-    background-color: rgb(255, 182, 193);
+/* --- Help Command List Styling --- */
+.output-list {
+  color: var(--text-secondary);
 }
 
-.circles li:nth-child(9) {
-    left: 20%;
-    width: 15px;
-    height: 15px;
-    animation-delay: 2s;
-    animation-duration: 35s;
-    background-color: rgb(173, 216, 230);
+.output-list p { margin: 0; }
+
+.output-list ul {
+  list-style-type: none;
+  padding-left: 1rem;
+  margin-top: 0.5rem;
 }
 
-.circles li:nth-child(10) {
-    left: 85%;
-    width: 150px;
-    height: 150px;
-    animation-delay: 0s;
-    animation-duration: 11s;
-    background-color: rgb(211, 211, 211);
+.output-list li { display: flex; align-items: center; }
+.output-list li::before { content: "-"; margin-right: 0.75rem; }
+
+.command-name {
+  color: var(--text-primary);
+  font-weight: 500;
+  width: 100px;
+  flex-shrink: 0;
 }
 
+.command-name::after { content: ":"; margin-left: 0.5rem; }
+.command-description { color: var(--text-secondary); }
 
-
-@keyframes animate {
-    0% {
-        transform: translateY(0) rotate(0deg);
-        opacity: 1;
-        border-radius: 0;
-    }
-
-    100% {
-        transform: translateY(-1000px) rotate(720deg);
-        opacity: 0;
-        border-radius: 50%;
-    }
+/* --- Mobile Responsiveness --- */
+@media (max-width: 768px) {
+  .main-container { padding: 1rem; align-items: flex-start; }
+  .terminal-window { height: calc(100vh - 100px); }
+  .terminal-body { font-size: 0.9rem; }
 }

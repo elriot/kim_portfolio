@@ -1,17 +1,100 @@
+/* --- Navbar Base --- */
+.navbar {
+  background-color: var(--card-background);
+  border-bottom: 1px solid var(--card-border);
+  transition: background-color 0.3s ease;
+  padding: 0.5rem 1rem;
+}
+
+.nav-container {
+  font-family: 'Trebuchet MS', sans-serif;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+/* --- Brand/Title --- */
+.navbar-brand {
+  color: var(--text-primary) !important;
+  font-weight: 600;
+}
+
+/* --- Nav Links --- */
 .nav-link {
-  color: gray;
+  color: var(--text-secondary);
   text-decoration: none;
+  padding: 0.5rem 1rem;
+  transition: color 0.2s ease;
 }
 
 .nav-link:hover {
-  color: black;
-  text-decoration: underline;
+  color: var(--text-primary);
+  text-decoration: none;
 }
 
 .nav-link.active {
-  text-decoration: underline;
+  color: var(--text-primary);
   font-weight: bold;
 }
-.nav-container{
-  font-family: Trebuchet MS, sans-serif;
+
+/* --- Right-side Controls --- */
+.header-controls {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* --- Toggler Icon (Hamburger Menu) --- */
+.navbar-toggler {
+  border: 1px solid var(--card-border) !important;
+  padding: 0.25rem 0.5rem;
+}
+
+[data-theme='light'] .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(29, 29, 31, 0.8)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+[data-theme='dark'] .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.8)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* --- Desktop Layout --- */
+@media (min-width: 992px) {
+  /* Hide the hamburger button only. */
+  .navbar-toggler {
+    display: none;
+  }
+  
+  /* Group all right-side elements except the brand name. */
+  .navbar-collapse {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: auto;
+    flex-grow: 1; /* Take up the remaining space */
+  }
+
+  .navbar-nav {
+    margin-right: 1rem;
+  }
+  
+  /* On desktop, the theme button is positioned after the nav links. */
+  .header-controls {
+    order: 2; /* Pushes it to the end of the flex container */
+  }
+}
+
+/* --- Mobile Layout --- */
+@media (max-width: 991.98px) {
+  .navbar-collapse {
+    width: 100%;
+    flex-basis: 100%;
+  }
+  /* On mobile, hide the theme button inside the collapsible menu */
+  /* since it's already visible next to the hamburger icon. */
+  .navbar-collapse .header-controls {
+    display: none;
+  }
 }

@@ -1,0 +1,29 @@
+.theme-toggle-button {
+  background-color: var(--button-secondary-bg);
+  color: var(--text-primary);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  
+  /* --- 2단계: 더 강력한 중앙 정렬 --- */
+  position: relative; /* 자식 요소의 기준점이 됨 */
+  padding: 0;
+}
+
+.theme-toggle-button svg {
+  font-size: 1.1rem; /* 아이콘 크기를 명시적으로 지정 */
+  
+  /* 아이콘을 버튼의 정중앙으로 이동시키는 공식 */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+.theme-toggle-button:hover {
+  transform: scale(1.1);
+}

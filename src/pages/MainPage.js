@@ -1,43 +1,138 @@
-// import "./MainPage.css";
-import React, { useState, useEffect } from 'react';
-import './MainPage2.css'; 
+import React, { useState, useRef, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import './MainPage.css';
+
+// --- Command Processing Logic ---
+const processCommand = (command, navigate) => {
+  const args = command.toLowerCase().split(' ');
+  const cmd = args[0];
+
+  switch (cmd) {
+    case 'help':
+      // Return a structured object instead of a plain string
+      return {
+        type: 'list',
+        lines: [
+          { command: 'whois', description: 'Learn more about me' },
+          { command: 'projects', description: 'View my work' },
+          { command: 'contact', description: 'Get in touch' },
+          { command: 'clear', description: 'Clear the terminal screen' },
+        ]
+      };
+
+    case 'whois':
+      navigate('/about');
+      return 'Navigating to About Me...';
+
+    case 'projects':
+      navigate('/portfolios');
+      return 'Navigating to Portfolio...';
+
+    case 'contact':
+      navigate('/contact');
+      return 'Navigating to Contact...';
+      
+    case 'clear':
+      return 'clear';
+
+    default:
+      return `command not found: ${command}\nType 'help' to see a list of available commands.`;
+  }
+};
+
+// --- Helper component to render different types of output ---
+const CommandOutput = ({ output }) => {
+  // Handle the structured list from the 'help' command
+  if (output && output.type === 'list') {
+    return (
+      <div className="output-list">
+        <p>Available commands:</p>
+        <ul>
+          {output.lines.map(line => (
+            <li key={line.command}>
+              <span className="command-name">{line.command}</span>
+              <span className="command-description">{line.description}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    );
+  }
+
+  // Handle all other simple text outputs
+  const text = output || '';
+  return (
+    <span className="line-text" dangerouslySetInnerHTML={{ __html: text.toString().replace(/\n/g, '<br />') }} />
+  );
+};
 
 export const MainPage = () => {
-    const [text, setText] = useState("Welcome!");
-    const [fade, setFade] = useState(false);
-    const texts = [
-  "Welcome to my little corner of the internet",
-  "Click around — it's all handmade!",
-  "Hope you enjoy your stay 🍀"
-];
+  const [history, setHistory] = useState([
+    { text: 'Welcome to my interactive portfolio!', isCommand: false },
+    { text: "Type 'help' to get started.", isCommand: false },
+  ]);
+  const [input, setInput] = useState('');
+  const inputRef = useRef(null);
+  const scrollRef = useRef(null);
+  const navigate = useNavigate();
 
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setFade(true); 
+  useEffect(() => { inputRef.current?.focus(); }, []);
+  useEffect(() => { scrollRef.current?.scrollIntoView({ behavior: 'smooth' }); }, [history]);
 
-            setTimeout(() => {
-                setText((prevText) => {
-                    const currentIndex = texts.indexOf(prevText);
-                    const nextIndex = (currentIndex + 1) % texts.length;
-                    return texts[nextIndex];
-                });
-                setFade(false); 
-            }, 1000); 
+  const handleInputChange = (e) => { setInput(e.target.value); };
 
-        }, 2500); 
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    if (!input) return;
 
-        return () => clearInterval(interval);
-    }, []); 
+    const output = processCommand(input, navigate);
 
-    return (
-        <div className="main-container page-container-height">
-            <span className="comment-text comment">// if (isHuman && passedAIFilter)</span>
-            <h1 className="main-text text">
-                <span className="function-name">print</span>
-                <span className="function-parentheses">(</span>
-                <span className={`animated-text func2 ${fade ? 'fade-out' : ''}`}>"{text}"</span>
-                <span className="function-parentheses">)</span>
-            </h1>
+    if (output === 'clear') {
+      setHistory([]);
+    } else {
+      setHistory(prev => [...prev, { text: input, isCommand: true }, { text: output, isCommand: false }]);
+    }
+    setInput('');
+  };
+
+  const focusInput = () => { inputRef.current?.focus(); };
+
+return (
+    <div className="main-container page-container-height" onClick={focusInput}>
+      <div className="terminal-window">
+        <div className="terminal-header">
+          <div className="terminal-buttons">
+            <span className="dot red"></span><span className="dot yellow"></span><span className="dot green"></span>
+          </div>
+          <div className="terminal-title">soopin-kim -- -bash</div>
         </div>
-    );
-}
+        <div className="terminal-body">
+          {history.map((line, index) => {
+            if (line.isCommand) {
+              return (
+                <div key={index} className="command-line">
+                  <span className="prompt-symbol">$</span>
+                  <span className="line-text">{line.text}</span>
+                </div>
+              );
+            } else {
+              return <CommandOutput key={index} output={line.text} />;
+            }
+          })}
+          <form onSubmit={handleFormSubmit} className="input-form">
+            <span className="prompt-symbol">$</span>
+            <input
+              ref={inputRef}
+              type="text"
+              className="terminal-input"
+              value={input}
+              onChange={handleInputChange}
+              autoFocus
+            />
+          </form>
+          <div ref={scrollRef} />
+        </div>
+      </div>
+    </div>
+  );
+};
